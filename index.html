@@ -1,4 +1,4 @@
-<!-- FILE: index.html  (expects images in /assets with your exact filenames) -->
+<!-- FILE: index.html (Updated: no duplicate socials, no big gap, better Discord CTA, full-page stretched background) -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,25 +10,18 @@
   <meta name="description" content="WOSC – Whiteout Survival Community (by Bros24 • State 214). Join our Discord for Whiteout Survival guides, SVS planning, Bear Trap, Frostfire Mine, transfers, events and multi-language help." />
   <link rel="canonical" href="https://www.whiteoutsurvival-community.com/" />
 
-  <!-- Social preview (Discord / Facebook / X) -->
+  <!-- Social preview -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WOSC – Whiteout Survival Community" />
   <meta property="og:title" content="WOSC – Whiteout Survival Community" />
-  <meta property="og:description" content="Guides • SVS • Bear Trap • Frostfire Mine • Transfers • Events • Multi-language" />
+  <meta property="og:description" content="Guides • SVS • Bear Trap • Frostfire Mine • Transfers • Events" />
   <meta property="og:url" content="https://www.whiteoutsurvival-community.com/" />
-  <!-- Use your existing 2000members image as preview -->
   <meta property="og:image" content="https://www.whiteoutsurvival-community.com/assets/2000members.png" />
-  <meta property="og:image:width" content="1024" />
-  <meta property="og:image:height" content="1024" />
-
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="WOSC – Whiteout Survival Community" />
-  <meta name="twitter:description" content="Guides, SVS planning, Bear Trap, transfers & events. Join our Discord." />
-  <meta name="twitter:image" content="https://www.whiteoutsurvival-community.com/assets/2000members.png" />
 
   <link rel="icon" href="/assets/logo.png" />
 
-  <!-- Structured Data (SEO) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -63,20 +56,51 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
-      background:
-        radial-gradient(1200px 800px at 18% 10%, rgba(96,165,250,.20), transparent 60%),
-        radial-gradient(1000px 700px at 82% 14%, rgba(125,211,252,.14), transparent 60%),
-        linear-gradient(180deg, #040712, var(--bg) 35%, #040712);
+      background: var(--bg);
       overflow-x:hidden;
     }
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:20px 16px 70px}
+
+    /* Full-page stretched background using your hero image (desktop/mobile) */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background:
+        radial-gradient(1200px 800px at 18% 10%, rgba(96,165,250,.18), transparent 60%),
+        radial-gradient(1000px 700px at 82% 14%, rgba(125,211,252,.12), transparent 60%),
+        url("/assets/hero.jpg") center/cover no-repeat;
+      filter: saturate(1.08) contrast(1.08);
+      transform: scale(1.02);
+    }
+    @media (max-width: 980px){
+      body::before{
+        background:
+          radial-gradient(900px 700px at 50% 10%, rgba(96,165,250,.18), transparent 60%),
+          url("/assets/hero-mobile.jpg") center/cover no-repeat;
+      }
+    }
+    /* Dark cinematic veil + subtle depth */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        radial-gradient(900px 650px at 20% 25%, rgba(125,211,252,.14), transparent 60%),
+        radial-gradient(900px 650px at 78% 22%, rgba(96,165,250,.12), transparent 60%),
+        linear-gradient(180deg, rgba(3,6,12,.55), rgba(3,6,12,.86));
+      pointer-events:none;
+    }
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:20px 16px 34px}
 
     /* Top bar */
     .top{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(7,11,20,.86), rgba(7,11,20,.38));
+      background: linear-gradient(180deg, rgba(7,11,20,.78), rgba(7,11,20,.30));
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .topInner{
@@ -116,18 +140,7 @@
       background: linear-gradient(135deg, rgba(125,211,252,.34), rgba(96,165,250,.18));
     }
 
-    /* Unified social icon buttons (same size everywhere) */
-    .socialRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .iconBtn{
-      display:inline-flex; align-items:center; gap:9px;
-      padding:9px 11px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      font-weight:800;
-      font-size:13px;
-    }
-    .iconBtn:hover{border-color: rgba(125,211,252,.45); background: rgba(125,211,252,.08)}
+    /* Unified icon sizing */
     .icon{
       width:18px; height:18px; display:block;
       object-fit:contain;
@@ -136,37 +149,19 @@
 
     /* HERO */
     .hero{
-      position:relative;
       margin-top:16px;
       border-radius: calc(var(--r) + 8px);
       overflow:hidden;
       border: 1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
-      background: #02040a;
-      min-height: 610px;
-    }
-    .heroMedia{position:absolute; inset:0}
-    .heroMedia picture, .heroMedia img{
-      width:100%; height:100%; display:block;
-      object-fit:cover;
-      transform: scale(1.03);
-      filter: saturate(1.08) contrast(1.08);
+      background: rgba(3,6,12,.30);
     }
 
-    /* cinematic overlays */
-    .vignette{
-      position:absolute; inset:0;
-      background:
-        radial-gradient(900px 650px at 22% 25%, rgba(125,211,252,.16), transparent 60%),
-        radial-gradient(900px 650px at 78% 22%, rgba(96,165,250,.14), transparent 60%),
-        linear-gradient(90deg, rgba(3,6,12,.92) 0%, rgba(3,6,12,.74) 40%, rgba(3,6,12,.30) 78%, rgba(3,6,12,.12) 100%),
-        linear-gradient(180deg, rgba(3,6,12,.08), rgba(3,6,12,.70));
-    }
     .grain{
       position:absolute; inset:0; pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
       mix-blend-mode: overlay;
-      opacity:.26;
+      opacity:.22;
     }
 
     .heroInner{
@@ -174,17 +169,10 @@
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap:14px;
-      padding:22px;
-      height:100%;
+      padding:20px;
     }
     @media (max-width: 980px){
-      .heroInner{grid-template-columns:1fr; padding:18px}
-      .hero{min-height: 720px}
-      .vignette{
-        background:
-          radial-gradient(900px 650px at 45% 18%, rgba(125,211,252,.16), transparent 60%),
-          linear-gradient(180deg, rgba(3,6,12,.90), rgba(3,6,12,.55), rgba(3,6,12,.40));
-      }
+      .heroInner{grid-template-columns:1fr}
     }
 
     .panel{
@@ -209,14 +197,14 @@
 
     h1{
       margin:12px 0 8px;
-      font-size: clamp(28px, 3.6vw, 48px); /* smaller / cleaner */
+      font-size: clamp(28px, 3.6vw, 46px);
       line-height:1.06;
       letter-spacing:-.7px;
     }
     .sub{
       margin:0;
       color: var(--muted);
-      font-size: 15.5px;
+      font-size: 15.4px;
       line-height: 1.7;
       max-width: 66ch;
     }
@@ -230,12 +218,15 @@
       background: rgba(255,255,255,.06);
       font-weight:900;
       font-size:13.5px;
+      white-space:nowrap;
     }
     .btn.primary{
       border-color: rgba(125,211,252,.88);
       background: linear-gradient(135deg, rgba(125,211,252,.38), rgba(96,165,250,.18));
     }
     .btn:hover{filter:brightness(1.05)}
+    .btn .linkText{font-weight:800; color:rgba(234,242,255,.92)}
+    .btn.primary .linkText{color:#061019}
 
     .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:14px}
     @media (max-width: 560px){ .stats{grid-template-columns:1fr} }
@@ -252,8 +243,12 @@
     .rightTop{
       display:flex; align-items:center; justify-content:space-between; gap:10px;
       margin-bottom:10px;
+      font-size:13px;
+      color:rgba(234,242,255,.92);
     }
-    .miniTitle{font-weight:900; letter-spacing:.2px; font-size:13.5px}
+    .rightTop b{font-size:13px}
+    .rightTop span{color:var(--muted); font-weight:800}
+
     .badge3d{
       position:relative;
       border-radius:18px;
@@ -262,10 +257,7 @@
       background: rgba(255,255,255,.04);
       box-shadow: 0 16px 45px rgba(0,0,0,.28);
     }
-    .badge3d img{
-      width:100%; height:auto; display:block;
-      transform: translateZ(0);
-    }
+    .badge3d img{width:100%; height:auto; display:block}
     .badgeGlow{
       position:absolute; inset:-40%;
       background: radial-gradient(circle at 30% 30%, rgba(125,211,252,.22), transparent 55%);
@@ -273,9 +265,20 @@
       pointer-events:none;
     }
 
+    .miniTitle{font-weight:900; letter-spacing:.2px; font-size:13.5px}
+    .card{
+      background: linear-gradient(180deg, rgba(10,16,28,.72), rgba(10,16,28,.55));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--r);
+      padding:14px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.20);
+    }
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color:var(--muted); line-height:1.7; font-size:13.8px}
+
     /* Sections */
     .sectionTitle{
-      margin:22px 0 12px;
+      margin:18px 0 10px;
       display:flex;
       justify-content:space-between;
       gap:10px;
@@ -288,25 +291,28 @@
     .grid{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
     @media (max-width: 1020px){ .grid{grid-template-columns:1fr} }
 
-    .card{
-      background: linear-gradient(180deg, rgba(10,16,28,.72), rgba(10,16,28,.55));
-      border:1px solid rgba(255,255,255,.10);
-      border-radius: var(--r);
-      padding:16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.22);
-    }
-    .card h3{margin:0 0 8px; font-size:15.5px}
-    .card p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
-
+    /* Footer: only Discord CTA + small socials (no duplicates above) */
     footer{
-      margin-top:28px;
-      padding-top:16px;
+      margin-top:18px;
+      padding:14px 0 0;
       border-top: 1px solid rgba(255,255,255,.08);
       color: var(--muted);
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
       font-size:13px;
     }
+    .footerInner{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
     .footLeft{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .footMeta{color:rgba(170,184,214,.92)}
+    .footCta{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+
+    /* Remove the big “hole”: make content naturally end, no extra bottom padding */
   </style>
 </head>
 
@@ -330,14 +336,7 @@
   </div>
 
   <div class="wrap" id="top">
-    <section class="hero" aria-label="Hero">
-      <div class="heroMedia" aria-hidden="true">
-        <picture>
-          <source media="(max-width: 980px)" srcset="/assets/hero-mobile.jpg" />
-          <img src="/assets/hero.jpg" alt="" />
-        </picture>
-      </div>
-      <div class="vignette" aria-hidden="true"></div>
+    <section class="hero" aria-label="Hero" style="position:relative">
       <div class="grain" aria-hidden="true"></div>
 
       <div class="heroInner">
@@ -351,10 +350,13 @@
           </p>
 
           <div class="ctaRow">
-            <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
+            <!-- Discord CTA improved: icon + text + link shown -->
+            <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener" aria-label="Join WOSC on Discord">
               <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
-              Join: discord.gg/wos-community
+              Join Discord
+              <span class="linkText">discord.gg/wos-community</span>
             </a>
+
             <a class="btn" href="#features">See features</a>
           </div>
 
@@ -373,23 +375,27 @@
             </div>
           </div>
 
-          <div class="socialRow" style="margin-top:12px">
-            <a class="iconBtn" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">
-              <img class="icon" src="/assets/facebook.png" alt="Facebook" /> Facebook
+          <!-- Socials only here (NOT in footer, per your request) -->
+          <div class="nav" style="margin-top:12px">
+            <a class="pill" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">
+              <img class="icon" src="/assets/facebook.png" alt="Facebook" style="display:inline-block; vertical-align:-4px; margin-right:8px" />
+              Facebook
             </a>
-            <a class="iconBtn" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">
-              <img class="icon" src="/assets/instagram.jpg" alt="Instagram" /> Instagram
+            <a class="pill" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">
+              <img class="icon" src="/assets/instagram.jpg" alt="Instagram" style="display:inline-block; vertical-align:-4px; margin-right:8px" />
+              Instagram
             </a>
-            <a class="iconBtn" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">
-              <img class="icon" src="/assets/x.png" alt="X" /> X
+            <a class="pill" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">
+              <img class="icon" src="/assets/x.png" alt="X" style="display:inline-block; vertical-align:-4px; margin-right:8px" />
+              X
             </a>
           </div>
         </div>
 
         <div class="panel">
           <div class="rightTop">
-            <div class="miniTitle">Community proof</div>
-            <div class="miniTitle" style="color:var(--muted)">by Bros24 • State 214</div>
+            <b>Community proof</b>
+            <span>by Bros24 • State 214</span>
           </div>
 
           <div class="badge3d" aria-label="2000 members">
@@ -420,7 +426,7 @@
 
     <div class="sectionTitle" id="features">
       <h2>Features</h2>
-      <p>Made for phone, laptop and PC.</p>
+      <p>Designed for phone, laptop and PC.</p>
     </div>
 
     <section class="grid" aria-label="Features grid">
@@ -429,12 +435,12 @@
         <p>Focused channels with practical answers and setups you can apply immediately.</p>
       </div>
       <div class="card">
-        <h3>🌍 Multi-language community</h3>
-        <p>English-first, with global channels so everyone can contribute and learn.</p>
+        <h3>🌍 Global community</h3>
+        <p>English-first with worldwide players—fast feedback and shared tactics.</p>
       </div>
       <div class="card">
-        <h3>🎁 Events & perks</h3>
-        <p>Community events, planning tools, and clean coordination to keep you organized.</p>
+        <h3>🎁 Events & coordination</h3>
+        <p>Clean planning for rewards, participation and alliance performance.</p>
       </div>
     </section>
 
@@ -446,7 +452,7 @@
     <section class="grid" aria-label="Why WOSC grid">
       <div class="card">
         <h3>⚔️ SVS done right</h3>
-        <p>Rotations, timing, and strategy discussions that actually translate into results.</p>
+        <p>Rotations, timing and practical strategy discussions for real results.</p>
       </div>
       <div class="card">
         <h3>🐻 Bear Trap coordination</h3>
@@ -454,27 +460,25 @@
       </div>
       <div class="card">
         <h3>❄️🔥 Frostfire Mine</h3>
-        <p>Clear roles, calls, and tips to improve performance for your alliance.</p>
+        <p>Clear roles and coordination to improve performance for your alliance.</p>
       </div>
     </section>
 
+    <!-- Footer: only Discord + small meta. No social duplicates. -->
     <footer>
-      <div class="footLeft">
-        <span>© <span id="y"></span> WOSC – Whiteout Survival Community • by Bros24 • State 214</span>
-      </div>
-      <div class="socialRow">
-        <a class="iconBtn" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" /> Discord
-        </a>
-        <a class="iconBtn" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/facebook.png" alt="Facebook" /> Facebook
-        </a>
-        <a class="iconBtn" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/instagram.jpg" alt="Instagram" /> Instagram
-        </a>
-        <a class="iconBtn" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/x.png" alt="X" /> X
-        </a>
+      <div class="footerInner">
+        <div class="footLeft">
+          <span class="footMeta">© <span id="y"></span> WOSC – Whiteout Survival Community • by Bros24 • State 214</span>
+          <span class="footMeta">Established Aug 2025</span>
+        </div>
+
+        <div class="footCta">
+          <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
+            <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
+            Join Discord
+            <span class="linkText">discord.gg/wos-community</span>
+          </a>
+        </div>
       </div>
     </footer>
   </div>
