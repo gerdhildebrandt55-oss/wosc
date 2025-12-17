@@ -157,7 +157,7 @@
       isolation:isolate;
     }
 
-    /* subtle big-logo to fill space (premium, not cheesy) */
+    /* Large subtle site logo */
     .hero::after{
       content:"";
       position:absolute;
@@ -197,6 +197,24 @@
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,.08),
         0 18px 55px rgba(0,0,0,.45);
+    }
+
+    /* LEFT hero panel watermark (fills the “gap”) */
+    .heroLeft{
+      position:relative;
+      overflow:hidden;
+    }
+    .heroLeft::after{
+      content:"";
+      position:absolute;
+      right:-40px;
+      bottom:-70px;
+      width:340px;
+      height:340px;
+      background:url("/assets/avatar-logo.png") center/contain no-repeat;
+      opacity:.08;
+      filter: blur(.25px);
+      pointer-events:none;
     }
 
     .kicker{
@@ -268,6 +286,34 @@
       font-size:12.5px;
     }
 
+    /* Brand stamp under chips (optional but premium) */
+    .brandStamp{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:18px;
+      opacity:.92;
+    }
+    .brandStamp img{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 26px rgba(0,0,0,.55);
+      object-fit:cover;
+    }
+    .brandStamp strong{
+      font-size:13px;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+    }
+    .brandStamp span{
+      display:block;
+      margin-top:3px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
     /* Right */
     .rightTop{
       display:flex; align-items:center; justify-content:space-between; gap:10px;
@@ -323,7 +369,6 @@
       }
     }
 
-    /* Modern headings */
     .card h2{
       margin:0 0 10px;
       font-size:18px;
@@ -385,13 +430,10 @@
     }
     .metaStrong{color:rgba(234,242,255,.92); font-weight:950}
 
-    /* accessibility */
+    /* accessibility helper */
     .srOnly{
-      position:absolute;
-      width:1px;height:1px;
-      padding:0;margin:-1px;
-      overflow:hidden;clip:rect(0,0,0,0);
-      white-space:nowrap;border:0;
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+      clip:rect(0,0,0,0);white-space:nowrap;border:0;
     }
   </style>
 </head>
@@ -407,7 +449,6 @@
         </div>
       </div>
 
-      <!-- Social buttons in header only -->
       <nav class="nav" aria-label="Top navigation">
         <a class="pill" href="#inside">Server</a>
         <a class="pill" href="#guides">Guides</a>
@@ -423,7 +464,6 @@
           <img class="icon" src="/assets/x.png" alt="X" /> X
         </a>
 
-        <!-- Main CTA -->
         <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
           <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" /> JOIN DISCORD
         </a>
@@ -437,7 +477,7 @@
 
       <div class="heroInner">
         <!-- Left -->
-        <div class="panel">
+        <div class="panel heroLeft">
           <span class="kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
           <h1>Whiteout Survival Discord community for real strategy.</h1>
           <p class="sub">
@@ -475,6 +515,15 @@
             <span class="chip">State transfers</span>
             <span class="chip">Multi-language</span>
             <span class="chip">Bots & tools</span>
+          </div>
+
+          <!-- Brand stamp (fills space professionally) -->
+          <div class="brandStamp" aria-label="WOSC branding">
+            <img src="/assets/avatar.png" alt="WOSC avatar" />
+            <div>
+              <strong>WOSC Community</strong>
+              <span>Built by players. For strategy.</span>
+            </div>
           </div>
         </div>
 
@@ -602,7 +651,7 @@
       </div>
     </section>
 
-    <!-- Conversion section (no extra Discord button to avoid overload) -->
+    <!-- Conversion (no extra Discord button to avoid overload) -->
     <section class="split" aria-label="Why join WOSC" style="margin-top:12px">
       <div class="card">
         <h2>Why WOSC works</h2>
