@@ -1,4 +1,3 @@
-<!-- FILE: index.html (compact, uses your Discord menu structure as “server features”) -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,14 +6,14 @@
   <meta name="theme-color" content="#070b14" />
 
   <title>WOSC – Whiteout Survival Community | Discord Guides, SVS, Bear Trap, Transfers</title>
-  <meta name="description" content="WOSC – Whiteout Survival Community (by Bros24 • State 214). Join our Discord for Whiteout Survival guides, SVS planning, Bear Trap, Frostfire Mine, transfers, events, bots and multi-language channels." />
+  <meta name="description" content="WOSC – Whiteout Survival Community. Join our Discord for Whiteout Survival guides, SVS strategy, Bear Trap, Frostfire Mine, state transfers, events, bots and multi-language channels." />
   <link rel="canonical" href="https://www.whiteoutsurvival-community.com/" />
 
-  <!-- Social preview -->
+  <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WOSC – Whiteout Survival Community" />
   <meta property="og:title" content="WOSC – Whiteout Survival Community" />
-  <meta property="og:description" content="Guides • SVS • Bear Trap • Frostfire Mine • Transfers • Events • Multi-language" />
+  <meta property="og:description" content="Whiteout Survival Discord community: Guides • SVS • Bear Trap • Transfers • Events • Multi-language" />
   <meta property="og:url" content="https://www.whiteoutsurvival-community.com/" />
   <meta property="og:image" content="https://www.whiteoutsurvival-community.com/assets/2000members.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -39,12 +38,15 @@
 
   <style>
     :root{
-      --panel: rgba(10,16,28,.76);
+      --bg:#070b14;
+      --panelA: rgba(18,26,45,.82);
+      --panelB: rgba(8,12,22,.92);
       --stroke: rgba(255,255,255,.10);
       --text:#eaf2ff;
       --muted:#aab8d6;
       --ice:#7dd3fc;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --ice2:#60a5fa;
+      --shadow: 0 22px 70px rgba(0,0,0,.65);
       --r: 18px;
       --max: 1180px;
     }
@@ -54,20 +56,20 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
-      background:#070b14;
+      background:var(--bg);
       overflow-x:hidden;
     }
     a{color:inherit; text-decoration:none}
 
-    /* Full-page background */
+    /* Background */
     body::before{
       content:"";
-      position:fixed; inset:0; z-index:-2;
+      position:fixed; inset:0; z-index:-3;
       background:
         radial-gradient(1200px 800px at 18% 10%, rgba(96,165,250,.16), transparent 60%),
         radial-gradient(1000px 700px at 82% 14%, rgba(125,211,252,.12), transparent 60%),
         url("/assets/hero.jpg") center/cover no-repeat;
-      filter:saturate(1.10) contrast(1.08);
+      filter:saturate(1.08) contrast(1.06);
       transform:scale(1.02);
     }
     @media (max-width: 980px){
@@ -79,11 +81,11 @@
     }
     body::after{
       content:"";
-      position:fixed; inset:0; z-index:-1;
+      position:fixed; inset:0; z-index:-2;
       background:
         radial-gradient(900px 650px at 20% 25%, rgba(125,211,252,.14), transparent 60%),
         radial-gradient(900px 650px at 78% 22%, rgba(96,165,250,.10), transparent 60%),
-        linear-gradient(180deg, rgba(3,6,12,.62), rgba(3,6,12,.92));
+        linear-gradient(180deg, rgba(3,6,12,.55), rgba(3,6,12,.92));
       pointer-events:none;
     }
 
@@ -93,7 +95,7 @@
     .top{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(7,11,20,.78), rgba(7,11,20,.30));
+      background: linear-gradient(180deg, rgba(7,11,20,.84), rgba(7,11,20,.28));
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .topInner{
@@ -108,11 +110,11 @@
     }
     .brand{display:flex; gap:10px; align-items:center}
     .brand img{
-      width:38px; height:38px;
+      width:40px; height:40px;
       border-radius:12px;
       background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: 0 10px 30px rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 32px rgba(0,0,0,.55);
       object-fit:cover;
     }
     .brand b{display:block; font-size:14px; letter-spacing:.2px}
@@ -129,11 +131,12 @@
       display:inline-flex;
       align-items:center;
       gap:8px;
+      transition: .18s ease;
     }
-    .pill:hover{border-color: rgba(125,211,252,.45); background: rgba(125,211,252,.08)}
+    .pill:hover{border-color: rgba(125,211,252,.50); background: rgba(125,211,252,.08); transform: translateY(-1px)}
     .pill.cta{
-      border-color: rgba(125,211,252,.86);
-      background: linear-gradient(135deg, rgba(125,211,252,.34), rgba(96,165,250,.18));
+      border-color: rgba(125,211,252,.90);
+      background: linear-gradient(135deg, rgba(125,211,252,.38), rgba(96,165,250,.18));
       text-transform:uppercase;
       letter-spacing:.6px;
     }
@@ -142,25 +145,43 @@
       filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
     }
 
-    /* Hero / Main */
+    /* Hero */
     .hero{
       margin-top:14px;
-      border-radius: calc(var(--r) + 8px);
+      border-radius: calc(var(--r) + 10px);
       overflow:hidden;
       border:1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
-      background: rgba(3,6,12,.34);
+      background: rgba(3,6,12,.30);
       position:relative;
+      isolation:isolate;
     }
+
+    /* subtle big-logo to fill space (premium, not cheesy) */
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-120px;
+      top:-90px;
+      width:560px;
+      height:560px;
+      background:url("/assets/logo.png") center/contain no-repeat;
+      opacity:.08;
+      pointer-events:none;
+      z-index:0;
+    }
+
     .grain{
       position:absolute; inset:0; pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
       mix-blend-mode: overlay;
-      opacity:.18;
+      opacity:.16;
+      z-index:1;
     }
 
     .heroInner{
       position:relative;
+      z-index:2;
       display:grid;
       grid-template-columns: 1.05fr .95fr;
       gap:14px;
@@ -169,11 +190,13 @@
     @media (max-width: 980px){ .heroInner{grid-template-columns:1fr} }
 
     .panel{
-      background: var(--panel);
       border:1px solid rgba(255,255,255,.10);
       border-radius: var(--r);
       padding:16px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+      background: linear-gradient(180deg, rgba(18,26,45,.70), rgba(8,12,22,.88));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 18px 55px rgba(0,0,0,.45);
     }
 
     .kicker{
@@ -186,6 +209,7 @@
       font-weight:950;
       font-size:12.5px;
     }
+
     h1{
       margin:12px 0 8px;
       font-size: clamp(28px, 3.4vw, 46px);
@@ -197,7 +221,7 @@
       color: var(--muted);
       font-size: 15.2px;
       line-height: 1.7;
-      max-width: 66ch;
+      max-width: 70ch;
     }
 
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
@@ -210,14 +234,16 @@
       font-weight:950;
       font-size:13.5px;
       white-space:nowrap;
+      transition:.18s ease;
     }
     .btn.primary{
-      border-color: rgba(125,211,252,.88);
-      background: linear-gradient(135deg, rgba(125,211,252,.38), rgba(96,165,250,.18));
+      border-color: rgba(125,211,252,.92);
+      background: linear-gradient(135deg, rgba(125,211,252,.40), rgba(96,165,250,.18));
       text-transform:uppercase;
       letter-spacing:.6px;
     }
-    .btn:hover{filter:brightness(1.05)}
+    .btn:hover{filter:brightness(1.06); transform: translateY(-1px)}
+    .btn:active{transform: translateY(0)}
 
     .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:14px}
     @media (max-width: 560px){ .stats{grid-template-columns:1fr} }
@@ -226,53 +252,10 @@
       border-radius:16px;
       border:1px solid rgba(255,255,255,.08);
       background: rgba(255,255,255,.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
     }
-    .stat b{display:block; font-size:14px}
+    .stat b{display:block; font-size:14px; letter-spacing:.2px}
     .stat span{display:block; color:var(--muted); font-size:12.5px; margin-top:4px}
-
-    .rightTop{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      margin-bottom:10px;
-      font-size:13px;
-    }
-    .rightTop b{font-size:13px}
-    .rightTop span{color:var(--muted); font-weight:900}
-
-    .badge3d{
-      position:relative;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      box-shadow: 0 16px 45px rgba(0,0,0,.28);
-    }
-    .badge3d img{width:100%; height:auto; display:block}
-    .badgeGlow{
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle at 30% 30%, rgba(125,211,252,.22), transparent 55%);
-      filter: blur(14px);
-      pointer-events:none;
-    }
-
-    /* Compact content blocks (fills “gaps” professionally) */
-    .split{
-      margin-top:12px;
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:12px;
-    }
-    @media (max-width: 980px){ .split{grid-template-columns:1fr} }
-
-    .card{
-      background: linear-gradient(180deg, rgba(10,16,28,.72), rgba(10,16,28,.55));
-      border:1px solid rgba(255,255,255,.10);
-      border-radius: var(--r);
-      padding:14px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.20);
-    }
-    .card h2{margin:0 0 10px; font-size:16px}
-    .card h3{margin:0 0 8px; font-size:14.5px}
-    .card p{margin:0; color:var(--muted); line-height:1.7; font-size:13.8px}
 
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
     .chip{
@@ -285,6 +268,84 @@
       font-size:12.5px;
     }
 
+    /* Right */
+    .rightTop{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+      font-size:13px;
+    }
+    .rightTop b{font-size:13px; letter-spacing:.25px; text-transform:uppercase}
+    .rightTop span{color:var(--muted); font-weight:900}
+
+    .badge3d{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 18px 55px rgba(0,0,0,.55);
+    }
+    .badge3d img{width:100%; height:auto; display:block}
+    .badgeGlow{
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(125,211,252,.22), transparent 55%);
+      filter: blur(14px);
+      pointer-events:none;
+    }
+
+    /* Sections */
+    .split{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:12px;
+    }
+    @media (max-width: 980px){ .split{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--r);
+      padding:14px;
+      background: linear-gradient(180deg, rgba(18,26,45,.66), rgba(8,12,22,.88));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 16px 50px rgba(0,0,0,.45);
+      transition: .18s ease;
+    }
+    @media (hover:hover){
+      .card:hover{
+        transform: translateY(-2px);
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,.12),
+          0 26px 72px rgba(0,0,0,.65);
+      }
+    }
+
+    /* Modern headings */
+    .card h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+    }
+    .card h2::after{
+      content:"";
+      display:block;
+      width:42px;
+      height:2px;
+      background: linear-gradient(90deg, rgba(125,211,252,.9), transparent);
+      margin-top:7px;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:15px;
+      letter-spacing:.25px;
+      text-transform:uppercase;
+    }
+    .card p{margin:0; color:var(--muted); line-height:1.7; font-size:13.8px}
+
     .menuGrid{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -292,15 +353,19 @@
       margin-top:10px;
     }
     @media (max-width: 700px){ .menuGrid{grid-template-columns:1fr} }
+
     .menuCol{
       border:1px solid rgba(255,255,255,.08);
       border-radius:16px;
       background: rgba(255,255,255,.03);
       padding:12px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
     }
     .menuCol b{
       display:flex; align-items:center; gap:8px;
-      font-size:13px; letter-spacing:.2px;
+      font-size:13px;
+      letter-spacing:.30px;
+      text-transform:uppercase;
       margin-bottom:8px;
     }
     .menuCol ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.7; font-size:13px}
@@ -319,6 +384,15 @@
       align-items:center;
     }
     .metaStrong{color:rgba(234,242,255,.92); font-weight:950}
+
+    /* accessibility */
+    .srOnly{
+      position:absolute;
+      width:1px;height:1px;
+      padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);
+      white-space:nowrap;border:0;
+    }
   </style>
 </head>
 
@@ -333,8 +407,8 @@
         </div>
       </div>
 
-      <!-- Social buttons ONLY in header -->
-      <div class="nav">
+      <!-- Social buttons in header only -->
+      <nav class="nav" aria-label="Top navigation">
         <a class="pill" href="#inside">Server</a>
         <a class="pill" href="#guides">Guides</a>
         <a class="pill" href="#events">Events</a>
@@ -349,25 +423,26 @@
           <img class="icon" src="/assets/x.png" alt="X" /> X
         </a>
 
+        <!-- Main CTA -->
         <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
           <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" /> JOIN DISCORD
         </a>
-      </div>
+      </nav>
     </div>
   </div>
 
-  <div class="wrap" id="top">
-    <section class="hero" aria-label="Hero">
+  <main class="wrap" id="top">
+    <section class="hero" aria-label="Whiteout Survival Discord community hero">
       <div class="grain" aria-hidden="true"></div>
 
       <div class="heroInner">
         <!-- Left -->
         <div class="panel">
           <span class="kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
-          <h1>Play smarter. Win together. Join WOSC.</h1>
+          <h1>Whiteout Survival Discord community for real strategy.</h1>
           <p class="sub">
-            A structured Discord for <strong>Whiteout Survival</strong> players: guides, planning, and coordination that actually helps.
-            Built for quick navigation, fast answers, and clean teamwork—without clutter.
+            WOSC is a structured <strong>Whiteout Survival Discord</strong> where you find guides, SVS planning,
+            Bear Trap strategy, Frostfire Mine coordination and state transfer updates—fast, clean, and organized.
           </p>
 
           <div class="ctaRow">
@@ -375,16 +450,16 @@
               <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
               JOIN DISCORD
             </a>
-            <a class="btn" href="#inside">VIEW SERVER</a>
+            <a class="btn" href="#inside">SERVER MAP</a>
           </div>
 
-          <div class="stats">
+          <div class="stats" aria-label="Highlights">
             <div class="stat">
               <b>Fast help</b>
               <span>quick-index + dedicated hubs</span>
             </div>
             <div class="stat">
-              <b>Real strategy</b>
+              <b>Real planning</b>
               <span>SVS • Bear Trap • Frostfire</span>
             </div>
             <div class="stat">
@@ -393,13 +468,13 @@
             </div>
           </div>
 
-          <div class="chips" aria-label="Highlights">
-            <span class="chip">SVS</span>
+          <div class="chips" aria-label="Topics">
+            <span class="chip">SVS strategy</span>
             <span class="chip">Bear Trap</span>
             <span class="chip">Frostfire Mine</span>
-            <span class="chip">Transfer Board</span>
+            <span class="chip">State transfers</span>
             <span class="chip">Multi-language</span>
-            <span class="chip">Bots & Tools</span>
+            <span class="chip">Bots & tools</span>
           </div>
         </div>
 
@@ -407,30 +482,30 @@
         <div class="panel">
           <div class="rightTop">
             <b>Community proof</b>
-            <span>by Bros24 • State 214</span>
+            <span>Established Aug 2025</span>
           </div>
 
           <div class="badge3d">
             <div class="badgeGlow" aria-hidden="true"></div>
-            <img src="/assets/2000members.png" alt="Thank you for 2,000 members" loading="eager" />
+            <img src="/assets/2000members.png" alt="WOSC community milestone graphic" loading="eager" />
           </div>
 
           <div class="split" style="margin-top:12px">
             <div class="card">
-              <h3>✅ Clean onboarding</h3>
-              <p>Welcome + quick-index + role selection so new members find everything instantly.</p>
+              <h3>Clean onboarding</h3>
+              <p>Welcome + quick-index + role selection so new members reach the right section instantly.</p>
             </div>
             <div class="card">
-              <h3>🌍 Languages</h3>
-              <p>Dedicated community chat and voice channels for multiple regions.</p>
+              <h3>Multi-language</h3>
+              <p>Dedicated chat and voice channels for multiple regions and time zones.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Compact, professional: show server structure as “feature map” -->
-    <section class="split" id="inside" aria-label="Server overview">
+    <!-- Server overview -->
+    <section class="split" id="inside" aria-label="Discord server map and sections">
       <div class="card">
         <h2>Server layout (built for speed)</h2>
 
@@ -495,7 +570,7 @@
           </div>
 
           <div class="menuCol" id="guides">
-            <b>🔷 GAME_SETTINGS</b>
+            <b>🔷 GAME SETTINGS</b>
             <ul>
               <li>building-guide</li>
               <li>chief-gear / charm-gear</li>
@@ -507,7 +582,7 @@
           </div>
 
           <div class="menuCol">
-            <b>🧑‍🚀 HEROS</b>
+            <b>🧑‍🚀 HEROES</b>
             <ul>
               <li>hero-info / expert</li>
               <li>gen-1 … gen-14</li>
@@ -527,30 +602,32 @@
       </div>
     </section>
 
-    <!-- Extra compact conversion block -->
-    <section class="split" aria-label="Why join" style="margin-top:12px">
+    <!-- Conversion section (no extra Discord button to avoid overload) -->
+    <section class="split" aria-label="Why join WOSC" style="margin-top:12px">
       <div class="card">
         <h2>Why WOSC works</h2>
         <p>
           The server is organized like a toolkit: onboarding → guides → events → transfers.
-          No scrolling through chaos. You open the right section and get answers fast.
+          No chaos, no endless scrolling—open the right section and get answers fast.
         </p>
-        <div class="chips">
+        <div class="chips" style="margin-top:12px">
           <span class="chip">Clean navigation</span>
-          <span class="chip">Real planning</span>
+          <span class="chip">SVS planning</span>
+          <span class="chip">Transfer updates</span>
           <span class="chip">Active community</span>
-          <span class="chip">Established Aug 2025</span>
         </div>
       </div>
 
       <div class="card">
         <h2>Join in 10 seconds</h2>
-        <p>Click join, say hi in <strong>#welcome</strong>, choose your language in <strong>#select_languages</strong>, then use <strong>#quick-index</strong> to jump to the right section.</p>
+        <ol style="margin:0; padding-left:18px; color:var(--muted); line-height:1.7">
+          <li>Click <strong>JOIN DISCORD</strong> in the header</li>
+          <li>Say hi in <strong>#welcome</strong></li>
+          <li>Choose your language in <strong>#select_languages</strong></li>
+          <li>Use <strong>#quick-index</strong> to jump to the right section</li>
+        </ol>
+
         <div class="ctaRow" style="margin-top:12px">
-          <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
-            <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
-            JOIN DISCORD
-          </a>
           <a class="btn" href="#inside">SERVER MAP</a>
         </div>
       </div>
@@ -561,13 +638,9 @@
         <span class="metaStrong">© <span id="y"></span> WOSC – Whiteout Survival Community</span>
         <span> • by Bros24 • State 214 • Established Aug 2025</span>
       </div>
-      <div>
-        <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" /> JOIN DISCORD
-        </a>
-      </div>
+      <div class="srOnly">Whiteout Survival Discord community - guides SVS Bear Trap Frostfire transfers</div>
     </footer>
-  </div>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
