@@ -1,4 +1,4 @@
-<!-- FILE: index.html (Updated: no duplicate socials, no big gap, better Discord CTA, full-page stretched background) -->
+<!-- FILE: index.html (compact, uses your Discord menu structure as “server features”) -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,14 +7,14 @@
   <meta name="theme-color" content="#070b14" />
 
   <title>WOSC – Whiteout Survival Community | Discord Guides, SVS, Bear Trap, Transfers</title>
-  <meta name="description" content="WOSC – Whiteout Survival Community (by Bros24 • State 214). Join our Discord for Whiteout Survival guides, SVS planning, Bear Trap, Frostfire Mine, transfers, events and multi-language help." />
+  <meta name="description" content="WOSC – Whiteout Survival Community (by Bros24 • State 214). Join our Discord for Whiteout Survival guides, SVS planning, Bear Trap, Frostfire Mine, transfers, events, bots and multi-language channels." />
   <link rel="canonical" href="https://www.whiteoutsurvival-community.com/" />
 
   <!-- Social preview -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WOSC – Whiteout Survival Community" />
   <meta property="og:title" content="WOSC – Whiteout Survival Community" />
-  <meta property="og:description" content="Guides • SVS • Bear Trap • Frostfire Mine • Transfers • Events" />
+  <meta property="og:description" content="Guides • SVS • Bear Trap • Frostfire Mine • Transfers • Events • Multi-language" />
   <meta property="og:url" content="https://www.whiteoutsurvival-community.com/" />
   <meta property="og:image" content="https://www.whiteoutsurvival-community.com/assets/2000members.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -39,16 +39,14 @@
 
   <style>
     :root{
-      --bg:#070b14;
-      --panel: rgba(10,16,28,.72);
+      --panel: rgba(10,16,28,.76);
       --stroke: rgba(255,255,255,.10);
       --text:#eaf2ff;
       --muted:#aab8d6;
       --ice:#7dd3fc;
-      --ice2:#60a5fa;
       --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --r: 20px;
-      --max: 1140px;
+      --r: 18px;
+      --max: 1180px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -56,47 +54,42 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
-      background: var(--bg);
+      background:#070b14;
       overflow-x:hidden;
     }
     a{color:inherit; text-decoration:none}
 
-    /* Full-page stretched background using your hero image (desktop/mobile) */
+    /* Full-page background */
     body::before{
       content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
+      position:fixed; inset:0; z-index:-2;
       background:
-        radial-gradient(1200px 800px at 18% 10%, rgba(96,165,250,.18), transparent 60%),
+        radial-gradient(1200px 800px at 18% 10%, rgba(96,165,250,.16), transparent 60%),
         radial-gradient(1000px 700px at 82% 14%, rgba(125,211,252,.12), transparent 60%),
         url("/assets/hero.jpg") center/cover no-repeat;
-      filter: saturate(1.08) contrast(1.08);
-      transform: scale(1.02);
+      filter:saturate(1.10) contrast(1.08);
+      transform:scale(1.02);
     }
     @media (max-width: 980px){
       body::before{
         background:
-          radial-gradient(900px 700px at 50% 10%, rgba(96,165,250,.18), transparent 60%),
+          radial-gradient(900px 700px at 50% 10%, rgba(96,165,250,.16), transparent 60%),
           url("/assets/hero-mobile.jpg") center/cover no-repeat;
       }
     }
-    /* Dark cinematic veil + subtle depth */
     body::after{
       content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
+      position:fixed; inset:0; z-index:-1;
       background:
         radial-gradient(900px 650px at 20% 25%, rgba(125,211,252,.14), transparent 60%),
-        radial-gradient(900px 650px at 78% 22%, rgba(96,165,250,.12), transparent 60%),
-        linear-gradient(180deg, rgba(3,6,12,.55), rgba(3,6,12,.86));
+        radial-gradient(900px 650px at 78% 22%, rgba(96,165,250,.10), transparent 60%),
+        linear-gradient(180deg, rgba(3,6,12,.62), rgba(3,6,12,.92));
       pointer-events:none;
     }
 
-    .wrap{max-width:var(--max); margin:0 auto; padding:20px 16px 34px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 26px}
 
-    /* Top bar */
+    /* Header */
     .top{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
@@ -122,7 +115,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,.45);
       object-fit:cover;
     }
-    .brand b{display:block; letter-spacing:.2px; font-size:14px}
+    .brand b{display:block; font-size:14px; letter-spacing:.2px}
     .brand small{display:block; color:var(--muted); margin-top:2px; font-size:12px}
 
     .nav{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
@@ -131,53 +124,53 @@
       border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
-      font-weight:800;
+      font-weight:900;
       font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
     }
     .pill:hover{border-color: rgba(125,211,252,.45); background: rgba(125,211,252,.08)}
     .pill.cta{
-      border-color: rgba(125,211,252,.85);
+      border-color: rgba(125,211,252,.86);
       background: linear-gradient(135deg, rgba(125,211,252,.34), rgba(96,165,250,.18));
+      text-transform:uppercase;
+      letter-spacing:.6px;
     }
-
-    /* Unified icon sizing */
     .icon{
-      width:18px; height:18px; display:block;
-      object-fit:contain;
+      width:18px; height:18px; display:block; object-fit:contain;
       filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
     }
 
-    /* HERO */
+    /* Hero / Main */
     .hero{
-      margin-top:16px;
+      margin-top:14px;
       border-radius: calc(var(--r) + 8px);
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
-      background: rgba(3,6,12,.30);
+      background: rgba(3,6,12,.34);
+      position:relative;
     }
-
     .grain{
       position:absolute; inset:0; pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
       mix-blend-mode: overlay;
-      opacity:.22;
+      opacity:.18;
     }
 
     .heroInner{
       position:relative;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.05fr .95fr;
       gap:14px;
-      padding:20px;
+      padding:18px;
     }
-    @media (max-width: 980px){
-      .heroInner{grid-template-columns:1fr}
-    }
+    @media (max-width: 980px){ .heroInner{grid-template-columns:1fr} }
 
     .panel{
       background: var(--panel);
-      border: 1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.10);
       border-radius: var(--r);
       padding:16px;
       box-shadow: 0 14px 40px rgba(0,0,0,.25);
@@ -190,21 +183,19 @@
       border:1px solid rgba(125,211,252,.35);
       background: rgba(125,211,252,.10);
       color:#d9f4ff;
-      font-weight:900;
-      letter-spacing:.2px;
+      font-weight:950;
       font-size:12.5px;
     }
-
     h1{
       margin:12px 0 8px;
-      font-size: clamp(28px, 3.6vw, 46px);
+      font-size: clamp(28px, 3.4vw, 46px);
       line-height:1.06;
       letter-spacing:-.7px;
     }
     .sub{
       margin:0;
       color: var(--muted);
-      font-size: 15.4px;
+      font-size: 15.2px;
       line-height: 1.7;
       max-width: 66ch;
     }
@@ -216,17 +207,17 @@
       border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
-      font-weight:900;
+      font-weight:950;
       font-size:13.5px;
       white-space:nowrap;
     }
     .btn.primary{
       border-color: rgba(125,211,252,.88);
       background: linear-gradient(135deg, rgba(125,211,252,.38), rgba(96,165,250,.18));
+      text-transform:uppercase;
+      letter-spacing:.6px;
     }
     .btn:hover{filter:brightness(1.05)}
-    .btn .linkText{font-weight:800; color:rgba(234,242,255,.92)}
-    .btn.primary .linkText{color:#061019}
 
     .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:14px}
     @media (max-width: 560px){ .stats{grid-template-columns:1fr} }
@@ -239,15 +230,13 @@
     .stat b{display:block; font-size:14px}
     .stat span{display:block; color:var(--muted); font-size:12.5px; margin-top:4px}
 
-    /* right panel */
     .rightTop{
       display:flex; align-items:center; justify-content:space-between; gap:10px;
       margin-bottom:10px;
       font-size:13px;
-      color:rgba(234,242,255,.92);
     }
     .rightTop b{font-size:13px}
-    .rightTop span{color:var(--muted); font-weight:800}
+    .rightTop span{color:var(--muted); font-weight:900}
 
     .badge3d{
       position:relative;
@@ -265,7 +254,15 @@
       pointer-events:none;
     }
 
-    .miniTitle{font-weight:900; letter-spacing:.2px; font-size:13.5px}
+    /* Compact content blocks (fills “gaps” professionally) */
+    .split{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:12px;
+    }
+    @media (max-width: 980px){ .split{grid-template-columns:1fr} }
+
     .card{
       background: linear-gradient(180deg, rgba(10,16,28,.72), rgba(10,16,28,.55));
       border:1px solid rgba(255,255,255,.10);
@@ -273,212 +270,301 @@
       padding:14px;
       box-shadow: 0 12px 40px rgba(0,0,0,.20);
     }
-    .card h3{margin:0 0 8px; font-size:15px}
+    .card h2{margin:0 0 10px; font-size:16px}
+    .card h3{margin:0 0 8px; font-size:14.5px}
     .card p{margin:0; color:var(--muted); line-height:1.7; font-size:13.8px}
 
-    /* Sections */
-    .sectionTitle{
-      margin:18px 0 10px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:flex-end;
-      flex-wrap:wrap;
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,242,255,.92);
+      font-weight:900;
+      font-size:12.5px;
     }
-    .sectionTitle h2{margin:0; font-size:18px}
-    .sectionTitle p{margin:0; color:var(--muted); font-size:13.5px}
 
-    .grid{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
-    @media (max-width: 1020px){ .grid{grid-template-columns:1fr} }
+    .menuGrid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (max-width: 700px){ .menuGrid{grid-template-columns:1fr} }
+    .menuCol{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      background: rgba(255,255,255,.03);
+      padding:12px;
+    }
+    .menuCol b{
+      display:flex; align-items:center; gap:8px;
+      font-size:13px; letter-spacing:.2px;
+      margin-bottom:8px;
+    }
+    .menuCol ul{margin:0; padding-left:16px; color:var(--muted); line-height:1.7; font-size:13px}
+    .menuCol li{margin:2px 0}
 
-    /* Footer: only Discord CTA + small socials (no duplicates above) */
     footer{
-      margin-top:18px;
-      padding:14px 0 0;
+      margin-top:14px;
+      padding-top:14px;
       border-top: 1px solid rgba(255,255,255,.08);
       color: var(--muted);
       font-size:13px;
-    }
-    .footerInner{
       display:flex;
       justify-content:space-between;
-      gap:12px;
+      gap:10px;
       flex-wrap:wrap;
       align-items:center;
     }
-    .footLeft{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .footMeta{color:rgba(170,184,214,.92)}
-    .footCta{
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
-    }
-
-    /* Remove the big “hole”: make content naturally end, no extra bottom padding */
+    .metaStrong{color:rgba(234,242,255,.92); font-weight:950}
   </style>
 </head>
 
 <body>
   <div class="top">
     <div class="topInner">
-      <a class="brand" href="#top" aria-label="WOSC Home">
+      <div class="brand">
         <img src="/assets/logo.png" alt="WOSC logo" />
         <div>
           <b>WOSC • Whiteout Survival Community</b>
           <small>by Bros24 • State 214</small>
         </div>
-      </a>
+      </div>
 
+      <!-- Social buttons ONLY in header -->
       <div class="nav">
-        <a class="pill" href="#features">Features</a>
-        <a class="pill" href="#why">Why WOSC</a>
-        <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">Join Discord</a>
+        <a class="pill" href="#inside">Server</a>
+        <a class="pill" href="#guides">Guides</a>
+        <a class="pill" href="#events">Events</a>
+
+        <a class="pill" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/facebook.png" alt="Facebook" /> Facebook
+        </a>
+        <a class="pill" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/instagram.jpg" alt="Instagram" /> Instagram
+        </a>
+        <a class="pill" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/x.png" alt="X" /> X
+        </a>
+
+        <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" /> JOIN DISCORD
+        </a>
       </div>
     </div>
   </div>
 
   <div class="wrap" id="top">
-    <section class="hero" aria-label="Hero" style="position:relative">
+    <section class="hero" aria-label="Hero">
       <div class="grain" aria-hidden="true"></div>
 
       <div class="heroInner">
+        <!-- Left -->
         <div class="panel">
           <span class="kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
           <h1>Play smarter. Win together. Join WOSC.</h1>
           <p class="sub">
-            WOSC is a global Discord community for <strong>Whiteout Survival</strong>.
-            Get real guides, clean coordination and daily help for <strong>SVS</strong>, <strong>Bear Trap</strong>,
-            <strong>Frostfire Mine</strong>, hero & pet priorities, gear balance, and organized <strong>transfers</strong>.
+            A structured Discord for <strong>Whiteout Survival</strong> players: guides, planning, and coordination that actually helps.
+            Built for quick navigation, fast answers, and clean teamwork—without clutter.
           </p>
 
           <div class="ctaRow">
-            <!-- Discord CTA improved: icon + text + link shown -->
-            <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener" aria-label="Join WOSC on Discord">
+            <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
               <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
-              Join Discord
-              <span class="linkText">discord.gg/wos-community</span>
+              JOIN DISCORD
             </a>
-
-            <a class="btn" href="#features">See features</a>
+            <a class="btn" href="#inside">VIEW SERVER</a>
           </div>
 
           <div class="stats">
             <div class="stat">
               <b>Fast help</b>
-              <span>daily Q&A and teamwork</span>
+              <span>quick-index + dedicated hubs</span>
             </div>
             <div class="stat">
               <b>Real strategy</b>
-              <span>F2P + advanced meta</span>
+              <span>SVS • Bear Trap • Frostfire</span>
             </div>
             <div class="stat">
-              <b>Organized transfers</b>
-              <span>clear leadership zones</span>
+              <b>Transfers</b>
+              <span>clear board + grouping</span>
             </div>
           </div>
 
-          <!-- Socials only here (NOT in footer, per your request) -->
-          <div class="nav" style="margin-top:12px">
-            <a class="pill" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">
-              <img class="icon" src="/assets/facebook.png" alt="Facebook" style="display:inline-block; vertical-align:-4px; margin-right:8px" />
-              Facebook
-            </a>
-            <a class="pill" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">
-              <img class="icon" src="/assets/instagram.jpg" alt="Instagram" style="display:inline-block; vertical-align:-4px; margin-right:8px" />
-              Instagram
-            </a>
-            <a class="pill" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">
-              <img class="icon" src="/assets/x.png" alt="X" style="display:inline-block; vertical-align:-4px; margin-right:8px" />
-              X
-            </a>
+          <div class="chips" aria-label="Highlights">
+            <span class="chip">SVS</span>
+            <span class="chip">Bear Trap</span>
+            <span class="chip">Frostfire Mine</span>
+            <span class="chip">Transfer Board</span>
+            <span class="chip">Multi-language</span>
+            <span class="chip">Bots & Tools</span>
           </div>
         </div>
 
+        <!-- Right -->
         <div class="panel">
           <div class="rightTop">
             <b>Community proof</b>
             <span>by Bros24 • State 214</span>
           </div>
 
-          <div class="badge3d" aria-label="2000 members">
+          <div class="badge3d">
             <div class="badgeGlow" aria-hidden="true"></div>
             <img src="/assets/2000members.png" alt="Thank you for 2,000 members" loading="eager" />
           </div>
 
-          <div class="sectionTitle" style="margin-top:14px">
-            <h2 style="font-size:15.5px; margin:0">What’s inside</h2>
-            <p style="margin:0">clean channels • no clutter</p>
-          </div>
-
-          <div class="card" style="margin-top:10px">
-            <h3>📘 Guides & Meta</h3>
-            <p>Hero lineups, pet upgrades, gear balance, research pacing, building priorities.</p>
-          </div>
-          <div class="card" style="margin-top:12px">
-            <h3>⏰ Events & SVS Planning</h3>
-            <p>SVS rotations, Bear Trap timings, Frostfire Mine coordination and reminders.</p>
-          </div>
-          <div class="card" style="margin-top:12px">
-            <h3>🔁 Transfers</h3>
-            <p>Structured transfer channels for alliances and players planning moves between states.</p>
+          <div class="split" style="margin-top:12px">
+            <div class="card">
+              <h3>✅ Clean onboarding</h3>
+              <p>Welcome + quick-index + role selection so new members find everything instantly.</p>
+            </div>
+            <div class="card">
+              <h3>🌍 Languages</h3>
+              <p>Dedicated community chat and voice channels for multiple regions.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="sectionTitle" id="features">
-      <h2>Features</h2>
-      <p>Designed for phone, laptop and PC.</p>
-    </div>
+    <!-- Compact, professional: show server structure as “feature map” -->
+    <section class="split" id="inside" aria-label="Server overview">
+      <div class="card">
+        <h2>Server layout (built for speed)</h2>
 
-    <section class="grid" aria-label="Features grid">
-      <div class="card">
-        <h3>🧠 Strategy, not spam</h3>
-        <p>Focused channels with practical answers and setups you can apply immediately.</p>
-      </div>
-      <div class="card">
-        <h3>🌍 Global community</h3>
-        <p>English-first with worldwide players—fast feedback and shared tactics.</p>
-      </div>
-      <div class="card">
-        <h3>🎁 Events & coordination</h3>
-        <p>Clean planning for rewards, participation and alliance performance.</p>
-      </div>
-    </section>
+        <div class="menuGrid">
+          <div class="menuCol">
+            <b>🟦 INFO & START</b>
+            <ul>
+              <li>welcome</li>
+              <li>quick-index</li>
+              <li>select_languages</li>
+              <li>rules-roles</li>
+              <li>player-ids</li>
+              <li>boost-ranking / birthday</li>
+            </ul>
+          </div>
 
-    <div class="sectionTitle" id="why">
-      <h2>Why players join WOSC</h2>
-      <p>Progress faster with better coordination.</p>
-    </div>
+          <div class="menuCol">
+            <b>🟩 COMMUNITY HUB</b>
+            <ul>
+              <li>info-hub</li>
+              <li>community-announcements</li>
+              <li>feedback / youtube-zone</li>
+              <li>gift-codes</li>
+              <li>bot-support / bug-reports</li>
+              <li>transfer-board</li>
+            </ul>
+          </div>
 
-    <section class="grid" aria-label="Why WOSC grid">
-      <div class="card">
-        <h3>⚔️ SVS done right</h3>
-        <p>Rotations, timing and practical strategy discussions for real results.</p>
-      </div>
-      <div class="card">
-        <h3>🐻 Bear Trap coordination</h3>
-        <p>Better planning, better participation, better rewards.</p>
-      </div>
-      <div class="card">
-        <h3>❄️🔥 Frostfire Mine</h3>
-        <p>Clear roles and coordination to improve performance for your alliance.</p>
-      </div>
-    </section>
+          <div class="menuCol">
+            <b>🗨️ COMMUNITY CHAT</b>
+            <ul>
+              <li>English / German / Polish / …</li>
+              <li>Many language channels</li>
+              <li>Fast help in your language</li>
+            </ul>
+          </div>
 
-    <!-- Footer: only Discord + small meta. No social duplicates. -->
-    <footer>
-      <div class="footerInner">
-        <div class="footLeft">
-          <span class="footMeta">© <span id="y"></span> WOSC – Whiteout Survival Community • by Bros24 • State 214</span>
-          <span class="footMeta">Established Aug 2025</span>
+          <div class="menuCol">
+            <b>🎙️ VOICE</b>
+            <ul>
+              <li>German / English / Polish voice</li>
+              <li>Training channel</li>
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="footCta">
+      <div class="card" id="events">
+        <h2>Event & strategy zones</h2>
+
+        <div class="menuGrid">
+          <div class="menuCol">
+            <b>🧊 EVENT-INFOS</b>
+            <ul>
+              <li>state-vs-state-create</li>
+              <li>fort-stronghold-create</li>
+              <li>frostfire</li>
+              <li>state-transfer</li>
+              <li>frostdragon-create</li>
+              <li>snowbuster / foundry</li>
+            </ul>
+          </div>
+
+          <div class="menuCol" id="guides">
+            <b>🔷 GAME_SETTINGS</b>
+            <ul>
+              <li>building-guide</li>
+              <li>chief-gear / charm-gear</li>
+              <li>research / canyon-battle</li>
+              <li>beartrap / island</li>
+              <li>resources / farm / pets</li>
+              <li>expert-tips / vip-tutorial</li>
+            </ul>
+          </div>
+
+          <div class="menuCol">
+            <b>🧑‍🚀 HEROS</b>
+            <ul>
+              <li>hero-info / expert</li>
+              <li>gen-1 … gen-14</li>
+              <li>generation breakdowns</li>
+            </ul>
+          </div>
+
+          <div class="menuCol">
+            <b>📚 FORUM & GUIDES</b>
+            <ul>
+              <li>wos-guides-forum</li>
+              <li>i-need-help</li>
+              <li>transfer-board groups</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extra compact conversion block -->
+    <section class="split" aria-label="Why join" style="margin-top:12px">
+      <div class="card">
+        <h2>Why WOSC works</h2>
+        <p>
+          The server is organized like a toolkit: onboarding → guides → events → transfers.
+          No scrolling through chaos. You open the right section and get answers fast.
+        </p>
+        <div class="chips">
+          <span class="chip">Clean navigation</span>
+          <span class="chip">Real planning</span>
+          <span class="chip">Active community</span>
+          <span class="chip">Established Aug 2025</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Join in 10 seconds</h2>
+        <p>Click join, say hi in <strong>#welcome</strong>, choose your language in <strong>#select_languages</strong>, then use <strong>#quick-index</strong> to jump to the right section.</p>
+        <div class="ctaRow" style="margin-top:12px">
           <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
             <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
-            Join Discord
-            <span class="linkText">discord.gg/wos-community</span>
+            JOIN DISCORD
           </a>
+          <a class="btn" href="#inside">SERVER MAP</a>
         </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <span class="metaStrong">© <span id="y"></span> WOSC – Whiteout Survival Community</span>
+        <span> • by Bros24 • State 214 • Established Aug 2025</span>
+      </div>
+      <div>
+        <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" /> JOIN DISCORD
+        </a>
       </div>
     </footer>
   </div>
