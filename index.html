@@ -1,65 +1,462 @@
-<!DOCTYPE html>
+<!-- FILE: index.html  |  GitHub Pages Landing Page for WOSC (Whiteout Survival Community) -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Whiteout Survival Community</title>
-  <meta name="description" content="Official Whiteout Survival Discord Community. Guides, events, alliances and support.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
 
-  <!-- SEO -->
-  <meta property="og:title" content="Whiteout Survival Community">
-  <meta property="og:description" content="Join the ultimate Whiteout Survival Discord community.">
-  <meta property="og:type" content="website">
+  <title>WOSC – Whiteout Survival Community (Discord)</title>
+  <meta name="description" content="WOSC (Whiteout Survival Community) — guides, events & tips. Join players worldwide for teamwork, strategy & daily fun. discord.gg/wos-community" />
+  <link rel="canonical" href="https://YOUR-DOMAIN.tld/" />
 
-  <!-- Google -->
-  <meta name="robots" content="index, follow">
+  <!-- Open Graph / Discord / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="WOSC – Whiteout Survival Community" />
+  <meta property="og:description" content="Guides, events & tips. Join players worldwide for teamwork, strategy & daily fun. discord.gg/wos-community" />
+  <meta property="og:url" content="https://YOUR-DOMAIN.tld/" />
+  <meta property="og:image" content="assets/2000members.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WOSC – Whiteout Survival Community" />
+  <meta name="twitter:description" content="Guides, events & tips. Join players worldwide for teamwork, strategy & daily fun." />
+  <meta name="twitter:image" content="assets/2000members.png" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      text-align: center;
+    :root{
+      --bg:#070b14;
+      --card:#0b1220cc;
+      --card2:#0b1220;
+      --text:#e8f0ff;
+      --muted:#a9b7d0;
+      --brand:#7dd3fc;
+      --brand2:#60a5fa;
+      --ok:#34d399;
+      --warn:#fbbf24;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 22px;
+      --max: 1120px;
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(96,165,250,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% 20%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 30% 80%, rgba(52,211,153,.10), transparent 60%),
+        linear-gradient(180deg, #050814, #070b14 40%, #050814);
+      overflow-x:hidden;
     }
-    h1 {
-      font-size: 3rem;
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:14px 0 10px;
+      position:sticky; top:0; backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(7,11,20,.85), rgba(7,11,20,.35));
+      z-index:50;
     }
-    p {
-      font-size: 1.2rem;
-      color: #cbd5f5;
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+      padding:10px 12px; border-radius:16px;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 16px 32px;
-      background: #5865F2;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      border-radius: 8px;
+    .brand img{width:44px; height:44px; border-radius:14px; box-shadow: 0 10px 25px rgba(0,0,0,.35)}
+    .brand strong{display:block; letter-spacing:.3px}
+    .brand small{display:block; color:var(--muted); margin-top:2px}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      text-decoration:none; color:var(--text);
+      padding:10px 12px; border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
     }
-    a.button:hover {
-      background: #4752c4;
+    .pill:hover{border-color:rgba(125,211,252,.55); background:rgba(125,211,252,.10)}
+    .cta{
+      background: linear-gradient(135deg, rgba(125,211,252,.30), rgba(96,165,250,.16));
+      border-color: rgba(125,211,252,.65);
+    }
+    .hero{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      align-items:stretch;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; }
+      header{position:relative}
+      nav{justify-content:flex-start}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(11,18,32,.82), rgba(11,18,32,.62));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroLeft{padding:26px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px; border-radius:999px;
+      background: rgba(125,211,252,.10);
+      border:1px solid rgba(125,211,252,.30);
+      color:#d7f3ff;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height:1.06;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size: 16.5px;
+      line-height:1.6;
+      max-width: 62ch;
+    }
+    .btnRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 15px;
+      border-radius:14px;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      font-weight:700;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(125,211,252,.35), rgba(96,165,250,.22));
+      border-color: rgba(125,211,252,.70);
+    }
+    .btn.primary:hover{filter:brightness(1.05)}
+    .btn.secondary:hover{border-color:rgba(255,255,255,.22)}
+    .stats{
+      display:grid; grid-template-columns: repeat(3, 1fr);
+      gap:10px; margin-top:18px;
+    }
+    @media (max-width: 520px){ .stats{grid-template-columns:1fr} }
+    .stat{
+      padding:14px; border-radius:16px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .stat b{display:block; font-size:18px}
+    .stat span{color:var(--muted); font-size:13px}
+    .heroRight{
+      padding:16px;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .media{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:#050814;
+    }
+    .media img, .media video{
+      display:block; width:100%; height:auto;
+    }
+    .grid{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+    .sectionTitle{
+      margin:32px 0 12px;
+      display:flex; align-items:center; gap:12px;
+    }
+    .sectionTitle h2{margin:0; font-size:22px}
+    .sectionTitle p{margin:0; color:var(--muted)}
+    .feature{
+      padding:18px;
+      background: linear-gradient(180deg, rgba(11,18,32,.75), rgba(11,18,32,.55));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 35px rgba(0,0,0,.28);
+    }
+    .feature h3{margin:0 0 8px; font-size:17px}
+    .feature p{margin:0; color:var(--muted); line-height:1.6}
+    .badgeRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .badge{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: #d9e6ff;
+      font-weight:600;
+      font-size: 13px;
+    }
+    .split{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+      margin-top:16px;
+    }
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+
+    .rules{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(11,18,32,.72), rgba(11,18,32,.54));
+    }
+    .rules ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
+    footer{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      flex-wrap:wrap;
+    }
+    .fine a{color:var(--muted)}
+    .glow{
+      position:absolute; inset:-200px -200px auto auto;
+      width:520px; height:520px;
+      background: radial-gradient(circle at 30% 30%, rgba(125,211,252,.25), transparent 60%);
+      filter: blur(18px);
+      pointer-events:none;
+      transform: rotate(18deg);
+    }
+    .srOnly{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+      clip:rect(0,0,0,0); white-space:nowrap; border:0;
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Whiteout Survival Community</h1>
-    <p>The professional Discord hub for Whiteout Survival players.</p>
-    <p>Guides • Alliances • Events • Support</p>
 
-    <!-- HIER DEIN DISCORD INVITE -->
-    <a class="button" href="https://discord.gg/DEIN_INVITE" target="_blank">
-      Join our Discord
-    </a>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top" aria-label="WOSC Home">
+        <img src="assets/brosbot-avatar.png" alt="BROS-BOT Avatar" />
+        <div>
+          <strong>WOSC • Whiteout Survival Community</strong>
+          <small>by DOA (214) • Discord: discord.gg/wos-community</small>
+        </div>
+      </a>
+
+      <nav aria-label="Primary">
+        <a class="pill" href="#features">Features</a>
+        <a class="pill" href="#forwho">For new & veteran players</a>
+        <a class="pill" href="#languages">Languages</a>
+        <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">Join Discord</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Hero">
+        <div class="card heroLeft">
+          <span class="kicker">🌨️ Whiteout Survival • Global Community Hub</span>
+          <h1>Join WOSC — the Discord community built to help you win smarter.</h1>
+          <p class="sub">
+            Guides, events & real strategy discussions for <strong>Whiteout Survival</strong>.
+            Learn Bear Trap 🐻, Frostfire Mine ❄️🔥, SVS ⚔️ rotations, hero & pet upgrades, gear balance,
+            and alliance coordination — with daily help from active players worldwide.
+          </p>
+
+          <div class="btnRow">
+            <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
+              🤝 Join now • discord.gg/wos-community
+            </a>
+            <!-- Optional: replace with your top.gg page -->
+            <a class="btn secondary" href="#vote" aria-label="Vote section">
+              ⭐ Vote / Support
+            </a>
+          </div>
+
+          <div class="stats" role="list" aria-label="Community highlights">
+            <div class="stat" role="listitem">
+              <b>600+ active members</b>
+              <span>fast help, real discussions</span>
+            </div>
+            <div class="stat" role="listitem">
+              <b>Guides + meta chats</b>
+              <span>F2P-friendly & P2W breakdowns</span>
+            </div>
+            <div class="stat" role="listitem">
+              <b>Custom Discord bots</b>
+              <span>timers, rally plans, reminders</span>
+            </div>
+          </div>
+
+          <div class="badgeRow" aria-label="Topics">
+            <span class="badge">🐻 Bear Trap</span>
+            <span class="badge">❄️🔥 Frostfire Mine</span>
+            <span class="badge">⚔️ SvS</span>
+            <span class="badge">🏰 Castle/Stronghold</span>
+            <span class="badge">🐉 Frost Dragon Tyrant</span>
+            <span class="badge">🎁 Gift Codes</span>
+            <span class="badge">🔁 Transfer Section</span>
+          </div>
+        </div>
+
+        <div class="card heroRight" aria-label="Media">
+          <div class="media" title="2,000 Members">
+            <img src="assets/2000members.png" alt="Thank you for 2,000 members - WOSC" />
+          </div>
+          <div class="media" title="Community Visual">
+            <img src="assets/community-hero.gif" alt="WOSC Community artwork (animated)" />
+          </div>
+        </div>
+      </section>
+
+      <div class="sectionTitle" id="features">
+        <h2>What you get inside WOSC</h2>
+        <p>Structured, helpful, and focused on progress — not noise.</p>
+      </div>
+
+      <section class="grid" aria-label="Features">
+        <article class="feature">
+          <h3>📘 Up-to-date guides & strategies</h3>
+          <p>Clear progression paths: building order, research pacing, hero/pet priorities, gear balance and event planning.</p>
+        </article>
+        <article class="feature">
+          <h3>🧠 Real meta discussions</h3>
+          <p>Formations, lineup theory, and practical tactics — explained for beginners and refined for veterans.</p>
+        </article>
+        <article class="feature">
+          <h3>⏰ Tools that keep you organized</h3>
+          <p>Custom bots for timers, rally planning, smart reminders — choose what to get notified about, mute the rest.</p>
+        </article>
+        <article class="feature">
+          <h3>🎁 Gift-code redemption</h3>
+          <p>We redeem official in-game gift codes for members so you don’t miss free rewards.</p>
+        </article>
+        <article class="feature">
+          <h3>🔁 Transfer Section</h3>
+          <p>Coordination space for alliances and players planning state transfers — clarity, structure, less chaos.</p>
+        </article>
+        <article class="feature">
+          <h3>🌍 Global & friendly</h3>
+          <p>Open to every state and alliance. Helpful culture, no ego — respectful recruitment allowed.</p>
+        </article>
+      </section>
+
+      <div class="sectionTitle" id="forwho">
+        <h2>Built for every type of player</h2>
+        <p>New player? Veteran? Leader? There’s a space for you.</p>
+      </div>
+
+      <section class="split" aria-label="For who">
+        <div class="feature">
+          <h3>🎯 New players</h3>
+          <p>
+            Step-by-step help: what to build first, how to research efficiently, and where to get the best F2P value.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>🔥 Veterans & strategists</h3>
+          <p>
+            Detailed breakdowns, formation theory, and high-level event planning with real examples from active states.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>👑 Leaders</h3>
+          <p>
+            Dedicated coordination zones for alliances across states, plus tools to keep events clean and on time.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>💬 Daily Q&A</h3>
+          <p>
+            Ask in your language, get help fast. Keep your progress moving every day.
+          </p>
+        </div>
+      </section>
+
+      <div class="sectionTitle" id="languages">
+        <h2>Multi-language channels</h2>
+        <p>Post in your language — the community stays connected.</p>
+      </div>
+
+      <section class="card" style="padding:18px">
+        <div class="badgeRow" aria-label="Languages list">
+          <span class="badge">🇬🇧 English</span>
+          <span class="badge">🇩🇪 Deutsch</span>
+          <span class="badge">🇵🇱 Polski</span>
+          <span class="badge">🇫🇷 Français</span>
+          <span class="badge">🇮🇹 Italiano</span>
+          <span class="badge">🇪🇸 Español</span>
+          <span class="badge">🇵🇹 Português</span>
+          <span class="badge">🇳🇱 Nederlands</span>
+          <span class="badge">🇹🇭 ไทย</span>
+          <span class="badge">🇺🇦 Українська</span>
+          <span class="badge">🇷🇺 Русский</span>
+          <span class="badge">🇯🇵 日本語</span>
+          <span class="badge">🇰🇷 한국어</span>
+          <span class="badge">🇨🇳 中文</span>
+          <span class="badge">🇮🇩 Indonesia</span>
+          <span class="badge">➕ more on request</span>
+        </div>
+      </section>
+
+      <div class="sectionTitle">
+        <h2>Community rules (short)</h2>
+        <p>Keep it helpful and fair-play.</p>
+      </div>
+
+      <section class="rules" aria-label="Rules">
+        <ul>
+          <li>No drama, no ego — be respectful.</li>
+          <li>Respectful recruitment is allowed.</li>
+          <li><strong>No account trading</strong> or selling offers (will be removed).</li>
+          <li>Help others, share knowledge, keep channels clean.</li>
+        </ul>
+      </section>
+
+      <div class="sectionTitle" id="vote">
+        <h2>Join in 10 seconds</h2>
+        <p>Say hi in <strong>#arrival</strong>, share your state + language — you’ll get the right channels unlocked.</p>
+      </div>
+
+      <section class="split" aria-label="Join">
+        <div class="card" style="padding:18px">
+          <h3 style="margin:0 0 10px">🤝 Join the Discord</h3>
+          <p style="margin:0; color:var(--muted); line-height:1.6">
+            WOSC – Whiteout Survival Community ©<br />
+            <strong>discord.gg/wos-community</strong>
+          </p>
+          <div class="btnRow" style="margin-top:14px">
+            <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
+              Open invite link
+            </a>
+          </div>
+          <p style="margin:12px 0 0; color:var(--muted); font-size:13px">
+            Tip: replace <code>YOUR-DOMAIN.tld</code> in this file if you use a custom domain.
+          </p>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <h3 style="margin:0 0 10px">🖼️ Social preview / branding</h3>
+          <p style="margin:0; color:var(--muted); line-height:1.6">
+            This page uses an Open Graph image, so your link looks professional in Discord/WhatsApp/Twitter.
+          </p>
+          <div class="media" style="margin-top:12px">
+            <img src="assets/community-live.png" alt="WOSC Community Live graphic" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="fine">
+        © <span id="y"></span> WOSC – Whiteout Survival Community • by DOA (214)
+      </div>
+      <div class="fine">
+        <a href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+      </div>
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
