@@ -1,45 +1,42 @@
-<!-- FILE: index.html | Domain: http://www.whiteoutsurvival-community.com/ -->
+<!-- FILE: index.html  (expects images in /assets with your exact filenames) -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#060a12" />
+  <meta name="theme-color" content="#070b14" />
 
-  <title>WOSC – Whiteout Survival Community Discord | Guides, SVS, Bear Trap, Transfers</title>
-  <meta name="description" content="WOSC – Whiteout Survival Community (by Bros24 • State 214). Join our Discord for Whiteout Survival guides, SVS planning, Bear Trap & Frostfire Mine strategies, transfers, events and multi-language help." />
+  <title>WOSC – Whiteout Survival Community | Discord Guides, SVS, Bear Trap, Transfers</title>
+  <meta name="description" content="WOSC – Whiteout Survival Community (by Bros24 • State 214). Join our Discord for Whiteout Survival guides, SVS planning, Bear Trap, Frostfire Mine, transfers, events and multi-language help." />
+  <link rel="canonical" href="https://www.whiteoutsurvival-community.com/" />
 
-  <link rel="canonical" href="http://www.whiteoutsurvival-community.com/" />
-
-  <!-- Open Graph (Discord / Facebook / WhatsApp) -->
+  <!-- Social preview (Discord / Facebook / X) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WOSC – Whiteout Survival Community" />
-  <meta property="og:title" content="WOSC – Whiteout Survival Community (Discord)" />
-  <meta property="og:description" content="Guides • SVS • Bear Trap • Frostfire Mine • Transfers • Events • Multi-language help. Join our Discord." />
-  <meta property="og:url" content="http://www.whiteoutsurvival-community.com/" />
-  <!-- Replace with your final OG image once uploaded -->
-  <meta property="og:image" content="http://www.whiteoutsurvival-community.com/assets/og-wosc.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:title" content="WOSC – Whiteout Survival Community" />
+  <meta property="og:description" content="Guides • SVS • Bear Trap • Frostfire Mine • Transfers • Events • Multi-language" />
+  <meta property="og:url" content="https://www.whiteoutsurvival-community.com/" />
+  <!-- Use your existing 2000members image as preview -->
+  <meta property="og:image" content="https://www.whiteoutsurvival-community.com/assets/2000members.png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
 
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="WOSC – Whiteout Survival Community (Discord)" />
-  <meta name="twitter:description" content="Whiteout Survival guides, SVS planning, Bear Trap & transfers. Join the community." />
-  <meta name="twitter:image" content="http://www.whiteoutsurvival-community.com/assets/og-wosc.jpg" />
+  <meta name="twitter:title" content="WOSC – Whiteout Survival Community" />
+  <meta name="twitter:description" content="Guides, SVS planning, Bear Trap, transfers & events. Join our Discord." />
+  <meta name="twitter:image" content="https://www.whiteoutsurvival-community.com/assets/2000members.png" />
 
-  <!-- Favicon (replace with your logo file later) -->
   <link rel="icon" href="/assets/logo.png" />
 
   <!-- Structured Data (SEO) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "WOSC – Whiteout Survival Community",
-    "url": "http://www.whiteoutsurvival-community.com/",
-    "logo": "http://www.whiteoutsurvival-community.com/assets/logo.png",
-    "sameAs": [
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"WOSC – Whiteout Survival Community",
+    "url":"https://www.whiteoutsurvival-community.com/",
+    "logo":"https://www.whiteoutsurvival-community.com/assets/logo.png",
+    "sameAs":[
       "https://www.facebook.com/wosc.community",
       "https://www.instagram.com/wosc.whiteout.survival/",
       "https://x.com/WOSCcommunity"
@@ -49,7 +46,7 @@
 
   <style>
     :root{
-      --bg:#060a12;
+      --bg:#070b14;
       --panel: rgba(10,16,28,.72);
       --stroke: rgba(255,255,255,.10);
       --text:#eaf2ff;
@@ -57,8 +54,8 @@
       --ice:#7dd3fc;
       --ice2:#60a5fa;
       --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --r: 22px;
-      --max: 1160px;
+      --r: 20px;
+      --max: 1140px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -67,59 +64,80 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
       background:
-        radial-gradient(1200px 800px at 18% 10%, rgba(96,165,250,.22), transparent 60%),
-        radial-gradient(1000px 700px at 82% 14%, rgba(125,211,252,.16), transparent 60%),
+        radial-gradient(1200px 800px at 18% 10%, rgba(96,165,250,.20), transparent 60%),
+        radial-gradient(1000px 700px at 82% 14%, rgba(125,211,252,.14), transparent 60%),
         linear-gradient(180deg, #040712, var(--bg) 35%, #040712);
       overflow-x:hidden;
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 70px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:20px 16px 70px}
 
-    /* Sticky top bar */
+    /* Top bar */
     .top{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(6,10,18,.84), rgba(6,10,18,.38));
+      background: linear-gradient(180deg, rgba(7,11,20,.86), rgba(7,11,20,.38));
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .topInner{
       max-width:var(--max);
       margin:0 auto;
-      padding:12px 16px;
+      padding:10px 16px;
       display:flex;
       gap:12px;
       align-items:center;
       justify-content:space-between;
       flex-wrap:wrap;
     }
-    .brand{display:flex; gap:10px; align-items:center; text-decoration:none}
+    .brand{display:flex; gap:10px; align-items:center}
     .brand img{
-      width:42px; height:42px; border-radius:14px;
+      width:38px; height:38px;
+      border-radius:12px;
       background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
       box-shadow: 0 10px 30px rgba(0,0,0,.45);
       object-fit:cover;
     }
-    .brand b{display:block; letter-spacing:.2px}
-    .brand small{display:block; color:var(--muted); margin-top:2px}
-    .nav{display:flex; gap:10px; flex-wrap:wrap}
+    .brand b{display:block; letter-spacing:.2px; font-size:14px}
+    .brand small{display:block; color:var(--muted); margin-top:2px; font-size:12px}
+
+    .nav{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
     .pill{
-      padding:10px 12px; border-radius:999px;
+      padding:9px 11px;
+      border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
-      text-decoration:none;
       font-weight:800;
+      font-size:13px;
     }
     .pill:hover{border-color: rgba(125,211,252,.45); background: rgba(125,211,252,.08)}
     .pill.cta{
-      border-color: rgba(125,211,252,.80);
+      border-color: rgba(125,211,252,.85);
       background: linear-gradient(135deg, rgba(125,211,252,.34), rgba(96,165,250,.18));
+    }
+
+    /* Unified social icon buttons (same size everywhere) */
+    .socialRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .iconBtn{
+      display:inline-flex; align-items:center; gap:9px;
+      padding:9px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      font-weight:800;
+      font-size:13px;
+    }
+    .iconBtn:hover{border-color: rgba(125,211,252,.45); background: rgba(125,211,252,.08)}
+    .icon{
+      width:18px; height:18px; display:block;
+      object-fit:contain;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
     }
 
     /* HERO */
     .hero{
       position:relative;
-      margin-top:18px;
+      margin-top:16px;
       border-radius: calc(var(--r) + 8px);
       overflow:hidden;
       border: 1px solid rgba(255,255,255,.10);
@@ -127,122 +145,168 @@
       background: #02040a;
       min-height: 610px;
     }
-    .heroBg{
+    .heroMedia{position:absolute; inset:0}
+    .heroMedia picture, .heroMedia img{
+      width:100%; height:100%; display:block;
+      object-fit:cover;
+      transform: scale(1.03);
+      filter: saturate(1.08) contrast(1.08);
+    }
+
+    /* cinematic overlays */
+    .vignette{
       position:absolute; inset:0;
       background:
         radial-gradient(900px 650px at 22% 25%, rgba(125,211,252,.16), transparent 60%),
         radial-gradient(900px 650px at 78% 22%, rgba(96,165,250,.14), transparent 60%),
-        linear-gradient(90deg, rgba(3,6,12,.92) 0%, rgba(3,6,12,.78) 40%, rgba(3,6,12,.30) 78%, rgba(3,6,12,.12) 100%),
-        linear-gradient(180deg, rgba(3,6,12,.18), rgba(3,6,12,.70));
-    }
-    .heroMedia{
-      position:absolute; inset:0;
-      background:#02040a;
-    }
-    .heroMedia picture, .heroMedia img{
-      width:100%; height:100%; display:block;
-      object-fit:cover;
-      filter: saturate(1.06) contrast(1.08);
-      transform: scale(1.03);
+        linear-gradient(90deg, rgba(3,6,12,.92) 0%, rgba(3,6,12,.74) 40%, rgba(3,6,12,.30) 78%, rgba(3,6,12,.12) 100%),
+        linear-gradient(180deg, rgba(3,6,12,.08), rgba(3,6,12,.70));
     }
     .grain{
       position:absolute; inset:0; pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
       mix-blend-mode: overlay;
-      opacity:.28;
+      opacity:.26;
     }
+
     .heroInner{
       position:relative;
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      padding:26px;
+      grid-template-columns: 1.15fr .85fr;
+      gap:14px;
+      padding:22px;
       height:100%;
     }
     @media (max-width: 980px){
-      .heroInner{grid-template-columns:1fr; padding:20px}
+      .heroInner{grid-template-columns:1fr; padding:18px}
       .hero{min-height: 720px}
+      .vignette{
+        background:
+          radial-gradient(900px 650px at 45% 18%, rgba(125,211,252,.16), transparent 60%),
+          linear-gradient(180deg, rgba(3,6,12,.90), rgba(3,6,12,.55), rgba(3,6,12,.40));
+      }
     }
 
     .panel{
       background: var(--panel);
       border: 1px solid rgba(255,255,255,.10);
       border-radius: var(--r);
-      padding:18px;
+      padding:16px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
     }
 
     .kicker{
       display:inline-flex; gap:10px; align-items:center;
-      padding:8px 12px;
+      padding:7px 11px;
       border-radius:999px;
       border:1px solid rgba(125,211,252,.35);
       background: rgba(125,211,252,.10);
       color:#d9f4ff;
       font-weight:900;
       letter-spacing:.2px;
+      font-size:12.5px;
     }
+
     h1{
-      margin:14px 0 10px;
-      font-size: clamp(30px, 4.2vw, 56px);
-      line-height:1.05;
-      letter-spacing:-.8px;
+      margin:12px 0 8px;
+      font-size: clamp(28px, 3.6vw, 48px); /* smaller / cleaner */
+      line-height:1.06;
+      letter-spacing:-.7px;
     }
     .sub{
       margin:0;
       color: var(--muted);
-      font-size: 16.8px;
-      line-height: 1.65;
-      max-width: 64ch;
+      font-size: 15.5px;
+      line-height: 1.7;
+      max-width: 66ch;
     }
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px;
+      padding:11px 14px;
       border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
-      text-decoration:none;
       font-weight:900;
+      font-size:13.5px;
     }
     .btn.primary{
-      border-color: rgba(125,211,252,.82);
-      background: linear-gradient(135deg, rgba(125,211,252,.36), rgba(96,165,250,.18));
+      border-color: rgba(125,211,252,.88);
+      background: linear-gradient(135deg, rgba(125,211,252,.38), rgba(96,165,250,.18));
     }
     .btn:hover{filter:brightness(1.05)}
 
     .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:14px}
     @media (max-width: 560px){ .stats{grid-template-columns:1fr} }
-    .stat{padding:12px; border-radius:16px; border:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.04)}
-    .stat b{display:block; font-size:18px}
-    .stat span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+    .stat{
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+    }
+    .stat b{display:block; font-size:14px}
+    .stat span{display:block; color:var(--muted); font-size:12.5px; margin-top:4px}
 
-    .miniTitle{font-weight:900; letter-spacing:.2px; margin-bottom:10px}
+    /* right panel */
+    .rightTop{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .miniTitle{font-weight:900; letter-spacing:.2px; font-size:13.5px}
+    .badge3d{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 16px 45px rgba(0,0,0,.28);
+    }
+    .badge3d img{
+      width:100%; height:auto; display:block;
+      transform: translateZ(0);
+    }
+    .badgeGlow{
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(125,211,252,.22), transparent 55%);
+      filter: blur(14px);
+      pointer-events:none;
+    }
+
+    /* Sections */
+    .sectionTitle{
+      margin:22px 0 12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:flex-end;
+      flex-wrap:wrap;
+    }
+    .sectionTitle h2{margin:0; font-size:18px}
+    .sectionTitle p{margin:0; color:var(--muted); font-size:13.5px}
+
+    .grid{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
+    @media (max-width: 1020px){ .grid{grid-template-columns:1fr} }
+
     .card{
       background: linear-gradient(180deg, rgba(10,16,28,.72), rgba(10,16,28,.55));
       border:1px solid rgba(255,255,255,.10);
       border-radius: var(--r);
-      padding:18px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.30);
+      padding:16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
     }
-    .card h3{margin:0 0 8px; font-size:17px}
-    .card p{margin:0; color:var(--muted); line-height:1.65}
-
-    .sectionTitle{margin:26px 0 12px; display:flex; justify-content:space-between; gap:10px; align-items:flex-end; flex-wrap:wrap}
-    .sectionTitle h2{margin:0; font-size:22px}
-    .sectionTitle p{margin:0; color:var(--muted)}
-    .grid{display:grid; grid-template-columns: repeat(3,1fr); gap:14px}
-    @media (max-width: 1020px){ .grid{grid-template-columns:1fr} }
-
-    /* Social buttons area */
-    .socials{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .card h3{margin:0 0 8px; font-size:15.5px}
+    .card p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
 
     footer{
-      margin-top:32px; padding-top:18px;
+      margin-top:28px;
+      padding-top:16px;
       border-top: 1px solid rgba(255,255,255,.08);
       color: var(--muted);
       display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      font-size:13px;
     }
-    code{background: rgba(255,255,255,.06); padding:2px 6px; border-radius:8px; border:1px solid rgba(255,255,255,.08)}
+    .footLeft{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
   </style>
 </head>
 
@@ -250,8 +314,7 @@
   <div class="top">
     <div class="topInner">
       <a class="brand" href="#top" aria-label="WOSC Home">
-        <!-- Upload later: /assets/logo.png -->
-        <img src="/assets/logo.png" alt="WOSC logo" onerror="this.src='/assets/logo-fallback.png';" />
+        <img src="/assets/logo.png" alt="WOSC logo" />
         <div>
           <b>WOSC • Whiteout Survival Community</b>
           <small>by Bros24 • State 214</small>
@@ -260,9 +323,7 @@
 
       <div class="nav">
         <a class="pill" href="#features">Features</a>
-        <a class="pill" href="#seo">About</a>
-        <a class="pill" href="#social">Social</a>
-        <!-- Replace later if your invite changes -->
+        <a class="pill" href="#why">Why WOSC</a>
         <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">Join Discord</a>
       </div>
     </div>
@@ -270,123 +331,150 @@
 
   <div class="wrap" id="top">
     <section class="hero" aria-label="Hero">
-      <!-- Upload later: /assets/hero-desktop.jpg and /assets/hero-mobile.jpg -->
       <div class="heroMedia" aria-hidden="true">
         <picture>
           <source media="(max-width: 980px)" srcset="/assets/hero-mobile.jpg" />
-          <img src="/assets/hero-desktop.jpg" alt="" />
+          <img src="/assets/hero.jpg" alt="" />
         </picture>
       </div>
-
-      <div class="heroBg" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
       <div class="grain" aria-hidden="true"></div>
 
       <div class="heroInner">
         <div class="panel">
           <span class="kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
-          <h1>Join the WOSC Discord and level up faster.</h1>
+          <h1>Play smarter. Win together. Join WOSC.</h1>
           <p class="sub">
-            WOSC is a global Whiteout Survival community led by <strong>Bros24 (State 214)</strong>.
-            Get practical guides and real coordination for <strong>SVS</strong>, <strong>Bear Trap</strong>,
-            <strong>Frostfire Mine</strong>, hero & pet upgrades, gear balance, events, and <strong>state transfers</strong>.
+            WOSC is a global Discord community for <strong>Whiteout Survival</strong>.
+            Get real guides, clean coordination and daily help for <strong>SVS</strong>, <strong>Bear Trap</strong>,
+            <strong>Frostfire Mine</strong>, hero & pet priorities, gear balance, and organized <strong>transfers</strong>.
           </p>
 
           <div class="ctaRow">
             <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
-              🤝 Join: discord.gg/wos-community
+              <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
+              Join: discord.gg/wos-community
             </a>
-            <a class="btn" href="#features">See what’s inside</a>
+            <a class="btn" href="#features">See features</a>
           </div>
 
           <div class="stats">
             <div class="stat">
-              <b>Active community</b>
-              <span>fast answers & daily help</span>
+              <b>Fast help</b>
+              <span>daily Q&A and teamwork</span>
             </div>
             <div class="stat">
-              <b>Guides + meta</b>
-              <span>F2P-friendly & advanced</span>
+              <b>Real strategy</b>
+              <span>F2P + advanced meta</span>
             </div>
             <div class="stat">
-              <b>Transfer Section</b>
-              <span>organized coordination</span>
+              <b>Organized transfers</b>
+              <span>clear leadership zones</span>
             </div>
           </div>
 
-          <div class="socials" id="social">
-            <a class="pill" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">Facebook</a>
-            <a class="pill" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">Instagram</a>
-            <a class="pill" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">X (Twitter)</a>
+          <div class="socialRow" style="margin-top:12px">
+            <a class="iconBtn" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">
+              <img class="icon" src="/assets/facebook.png" alt="Facebook" /> Facebook
+            </a>
+            <a class="iconBtn" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">
+              <img class="icon" src="/assets/instagram.jpg" alt="Instagram" /> Instagram
+            </a>
+            <a class="iconBtn" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">
+              <img class="icon" src="/assets/x.png" alt="X" /> X
+            </a>
           </div>
         </div>
 
         <div class="panel">
-          <div class="miniTitle">Highlights</div>
-
-          <div class="card" style="margin-bottom:12px">
-            <h3>📘 Guides & Meta</h3>
-            <p>Hero lineups, pets, gear balance, research pacing, building priorities.</p>
+          <div class="rightTop">
+            <div class="miniTitle">Community proof</div>
+            <div class="miniTitle" style="color:var(--muted)">by Bros24 • State 214</div>
           </div>
 
-          <div class="card" style="margin-bottom:12px">
+          <div class="badge3d" aria-label="2000 members">
+            <div class="badgeGlow" aria-hidden="true"></div>
+            <img src="/assets/2000members.png" alt="Thank you for 2,000 members" loading="eager" />
+          </div>
+
+          <div class="sectionTitle" style="margin-top:14px">
+            <h2 style="font-size:15.5px; margin:0">What’s inside</h2>
+            <p style="margin:0">clean channels • no clutter</p>
+          </div>
+
+          <div class="card" style="margin-top:10px">
+            <h3>📘 Guides & Meta</h3>
+            <p>Hero lineups, pet upgrades, gear balance, research pacing, building priorities.</p>
+          </div>
+          <div class="card" style="margin-top:12px">
             <h3>⏰ Events & SVS Planning</h3>
             <p>SVS rotations, Bear Trap timings, Frostfire Mine coordination and reminders.</p>
           </div>
-
-          <div class="card">
-            <h3>🔁 Transfers & Leadership Zones</h3>
-            <p>Clear channels for alliance leadership and players planning cross-state moves.</p>
+          <div class="card" style="margin-top:12px">
+            <h3>🔁 Transfers</h3>
+            <p>Structured transfer channels for alliances and players planning moves between states.</p>
           </div>
         </div>
       </div>
     </section>
 
     <div class="sectionTitle" id="features">
-      <h2>What you get in WOSC</h2>
-      <p>Built to look great on PC, laptop and phone — and to be genuinely useful.</p>
+      <h2>Features</h2>
+      <p>Made for phone, laptop and PC.</p>
     </div>
 
     <section class="grid" aria-label="Features grid">
       <div class="card">
         <h3>🧠 Strategy, not spam</h3>
-        <p>Focused channels with clear answers and practical setups you can apply immediately.</p>
+        <p>Focused channels with practical answers and setups you can apply immediately.</p>
       </div>
       <div class="card">
-        <h3>🌍 Multi-language help</h3>
-        <p>English-first, with multi-language channels and easy communication across regions.</p>
+        <h3>🌍 Multi-language community</h3>
+        <p>English-first, with global channels so everyone can contribute and learn.</p>
       </div>
       <div class="card">
-        <h3>🎁 Tools & perks</h3>
-        <p>Gift-code redemption, community events, and Discord tools to stay organized.</p>
+        <h3>🎁 Events & perks</h3>
+        <p>Community events, planning tools, and clean coordination to keep you organized.</p>
       </div>
     </section>
 
-    <!-- SEO text section (helps Google; not hashtag spam) -->
-    <div class="sectionTitle" id="seo">
-      <h2>Whiteout Survival Discord Community</h2>
-      <p>What WOSC is about (for Google + users).</p>
+    <div class="sectionTitle" id="why">
+      <h2>Why players join WOSC</h2>
+      <p>Progress faster with better coordination.</p>
     </div>
 
-    <section class="card">
-      <p style="margin:0; color:var(--muted); line-height:1.75">
-        <strong>WOSC (Whiteout Survival Community)</strong> is a global Discord server for players of the mobile game
-        <strong>Whiteout Survival</strong>. We share updated guides, event planning, SVS strategy, Bear Trap and
-        Frostfire Mine coordination, hero and pet upgrade priorities, gear balance tips, and organized
-        <strong>state transfer</strong> discussions. If you want to progress faster, coordinate better with your alliance,
-        and learn proven strategies from active players, join us on Discord.
-      </p>
-
-      <!-- Social "hashtags" area for social networks (not for Google ranking) -->
-      <p style="margin:14px 0 0; color:var(--muted)">
-        Social tags: <strong>#WhiteoutSurvival</strong> <strong>#WOS</strong> <strong>#WOSC</strong> <strong>#SVS</strong>
-        <strong>#BearTrap</strong> <strong>#FrostfireMine</strong> <strong>#MobileGaming</strong> <strong>#DiscordCommunity</strong>
-      </p>
+    <section class="grid" aria-label="Why WOSC grid">
+      <div class="card">
+        <h3>⚔️ SVS done right</h3>
+        <p>Rotations, timing, and strategy discussions that actually translate into results.</p>
+      </div>
+      <div class="card">
+        <h3>🐻 Bear Trap coordination</h3>
+        <p>Better planning, better participation, better rewards.</p>
+      </div>
+      <div class="card">
+        <h3>❄️🔥 Frostfire Mine</h3>
+        <p>Clear roles, calls, and tips to improve performance for your alliance.</p>
+      </div>
     </section>
 
     <footer>
-      <div>© <span id="y"></span> WOSC – Whiteout Survival Community • by Bros24 • State 214</div>
-      <div>
-        Join Discord: <a href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a>
+      <div class="footLeft">
+        <span>© <span id="y"></span> WOSC – Whiteout Survival Community • by Bros24 • State 214</span>
+      </div>
+      <div class="socialRow">
+        <a class="iconBtn" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" /> Discord
+        </a>
+        <a class="iconBtn" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/facebook.png" alt="Facebook" /> Facebook
+        </a>
+        <a class="iconBtn" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/instagram.jpg" alt="Instagram" /> Instagram
+        </a>
+        <a class="iconBtn" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">
+          <img class="icon" src="/assets/x.png" alt="X" /> X
+        </a>
       </div>
     </footer>
   </div>
