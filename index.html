@@ -145,29 +145,84 @@
       filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
     }
 
-    /* Language dropdown */
+    /* ✅ Language dropdown (MORE VISIBLE on dark background) */
     .langWrap{position:relative}
+
     .langBtn{
       cursor:pointer;
       user-select:none;
-      padding:9px 11px;
+      padding:10px 12px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      font-weight:900;
+
+      /* brighter, CTA-like */
+      border:1px solid rgba(125,211,252,.98);
+      background: linear-gradient(135deg, rgba(125,211,252,.52), rgba(96,165,250,.20));
+      box-shadow:
+        0 16px 44px rgba(0,0,0,.62),
+        0 0 0 3px rgba(125,211,252,.16),
+        0 0 24px rgba(125,211,252,.22),
+        inset 0 1px 0 rgba(255,255,255,.16);
+
+      font-weight:950;
       font-size:13px;
       display:inline-flex;
       align-items:center;
       gap:8px;
       transition: .18s ease;
+      letter-spacing:.2px;
     }
-    .langBtn:hover{border-color: rgba(125,211,252,.50); background: rgba(125,211,252,.08); transform: translateY(-1px)}
+    .langBtn:hover{
+      border-color: rgba(125,211,252,1);
+      background: linear-gradient(135deg, rgba(125,211,252,.64), rgba(96,165,250,.24));
+      transform: translateY(-1px);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.70),
+        0 0 0 4px rgba(125,211,252,.20),
+        0 0 34px rgba(125,211,252,.28),
+        inset 0 1px 0 rgba(255,255,255,.20);
+    }
     .langBtn:active{transform: translateY(0)}
+
+    /* subtle attention pulse (disabled if user prefers reduced motion) */
+    @media (prefers-reduced-motion: no-preference){
+      .langBtn{
+        animation: langPulse 3.6s ease-in-out infinite;
+      }
+      @keyframes langPulse{
+        0%, 100%{
+          box-shadow:
+            0 16px 44px rgba(0,0,0,.62),
+            0 0 0 3px rgba(125,211,252,.16),
+            0 0 24px rgba(125,211,252,.22),
+            inset 0 1px 0 rgba(255,255,255,.16);
+        }
+        50%{
+          box-shadow:
+            0 18px 50px rgba(0,0,0,.66),
+            0 0 0 4px rgba(125,211,252,.22),
+            0 0 40px rgba(125,211,252,.30),
+            inset 0 1px 0 rgba(255,255,255,.18);
+        }
+      }
+    }
+
+    /* make the language code a small badge for readability */
+    #langBtnCode{
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.24);
+      color: rgba(234,242,255,.98);
+      font-size:12px;
+      font-weight:950;
+      line-height:1;
+    }
+
     .langMenu{
       position:absolute;
       right:0;
       top:calc(100% + 10px);
-      min-width: 240px;
+      min-width: 260px;
       max-height: 360px;
       overflow:auto;
       border-radius: 16px;
@@ -215,8 +270,6 @@
       position:relative;
       isolation:isolate;
     }
-
-    /* Large subtle site logo */
     .hero::after{
       content:"";
       position:absolute;
@@ -229,7 +282,6 @@
       pointer-events:none;
       z-index:0;
     }
-
     .grain{
       position:absolute; inset:0; pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
@@ -237,7 +289,6 @@
       opacity:.16;
       z-index:1;
     }
-
     .heroInner{
       position:relative;
       z-index:2;
@@ -257,12 +308,7 @@
         inset 0 1px 0 rgba(255,255,255,.08),
         0 18px 55px rgba(0,0,0,.45);
     }
-
-    /* LEFT hero panel watermark (fills the “gap”) */
-    .heroLeft{
-      position:relative;
-      overflow:hidden;
-    }
+    .heroLeft{position:relative; overflow:hidden}
     .heroLeft::after{
       content:"";
       position:absolute;
@@ -286,7 +332,6 @@
       font-weight:950;
       font-size:12.5px;
     }
-
     h1{
       margin:12px 0 8px;
       font-size: clamp(28px, 3.4vw, 46px);
@@ -300,7 +345,6 @@
       line-height: 1.7;
       max-width: 70ch;
     }
-
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
@@ -345,7 +389,6 @@
       font-size:12.5px;
     }
 
-    /* Brand stamp under chips (optional but premium) */
     .brandStamp{
       display:flex;
       align-items:center;
@@ -373,7 +416,6 @@
       color:var(--muted);
     }
 
-    /* Right */
     .rightTop{
       display:flex; align-items:center; justify-content:space-between; gap:10px;
       margin-bottom:10px;
@@ -400,7 +442,6 @@
       pointer-events:none;
     }
 
-    /* Sections */
     .split{
       margin-top:12px;
       display:grid;
@@ -427,7 +468,6 @@
           0 26px 72px rgba(0,0,0,.65);
       }
     }
-
     .card h2{
       margin:0 0 10px;
       font-size:18px;
@@ -489,13 +529,11 @@
     }
     .metaStrong{color:rgba(234,242,255,.92); font-weight:950}
 
-    /* accessibility helper */
     .srOnly{
       position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
       clip:rect(0,0,0,0);white-space:nowrap;border:0;
     }
 
-    /* RTL improvements */
     [dir="rtl"] body{direction:rtl}
     [dir="rtl"] .topInner{direction:rtl}
     [dir="rtl"] .nav{justify-content:flex-start}
@@ -536,12 +574,12 @@
           <span data-i18n="nav.join">JOIN DISCORD</span>
         </a>
 
-        <!-- ✅ Language dropdown (top-right) -->
+        <!-- ✅ Visible language/translation dropdown -->
         <div class="langWrap">
           <button class="langBtn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
             <span class="langFlag" id="langBtnFlag">🌐</span>
-            <span id="langBtnLabel" data-i18n="lang.button">Language</span>
-            <span class="langCode" id="langBtnCode">en</span>
+            <span id="langBtnLabel" data-i18n="lang.button">Translate</span>
+            <span id="langBtnCode">en</span>
           </button>
           <div class="langMenu" id="langMenu" role="listbox" aria-label="Language selector"></div>
         </div>
@@ -554,12 +592,10 @@
       <div class="grain" aria-hidden="true"></div>
 
       <div class="heroInner">
-        <!-- Left -->
         <div class="panel heroLeft">
           <span class="kicker" data-i18n="hero.kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
           <h1 data-i18n="hero.title">Whiteout Survival Discord community for real strategy.</h1>
 
-          <!-- HTML translation allowed (keeps <strong>) -->
           <p class="sub" data-i18n-html="hero.sub">
             WOSC is a structured <strong>Whiteout Survival Discord</strong> where you find guides, SVS planning,
             Bear Trap strategy, Frostfire Mine coordination and state transfer updates—fast, clean, and organized.
@@ -606,7 +642,6 @@
           </div>
         </div>
 
-        <!-- Right -->
         <div class="panel">
           <div class="rightTop">
             <b data-i18n="proof.title">Community proof</b>
@@ -632,7 +667,6 @@
       </div>
     </section>
 
-    <!-- Announcement -->
     <section class="split" id="announcement" aria-label="Bot server upgrade announcement" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.announcement" style="margin-top:12px">
       <div class="card">
         <h2 data-i18n="ann.title">Announcement · Shelty McGuide meets AI</h2>
@@ -672,7 +706,6 @@
       </div>
     </section>
 
-    <!-- Server overview -->
     <section class="split" id="inside" aria-label="Discord server map and sections" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.servermap">
       <div class="card">
         <h2 data-i18n="layout.title">Server layout (built for speed)</h2>
@@ -810,12 +843,6 @@
   </main>
 
   <script>
-    // -----------------------------
-    // i18n loader (index.json)
-    // Supports either:
-    // 1) { "en": {...}, "de": {...} }
-    // 2) { "languages": { "en": {...}, ... } }
-    // -----------------------------
     const I18N_URL = "index.json";
 
     const LANGS = [
@@ -888,11 +915,9 @@
           if(node.getAttribute("property") === "og:site_name") node.setAttribute("content", val);
           if(node.getAttribute("property") === "og:title") node.setAttribute("content", val);
           if(node.getAttribute("property") === "og:description") node.setAttribute("content", val);
-          return;
         }
       });
 
-      // Also update visible <title> node text if present
       const titleEl = document.querySelector("title");
       const t = dict && dict["meta.title"];
       if(titleEl && t) titleEl.textContent = t;
@@ -904,10 +929,8 @@
       html.lang = lang;
       html.dir = (lang === "ar") ? "rtl" : "ltr";
 
-      // 1) meta
       setMeta(dict);
 
-      // 2) text + html blocks
       document.querySelectorAll("[data-i18n], [data-i18n-html]").forEach(el => {
         const htmlKey = el.getAttribute("data-i18n-html");
         const textKey = el.getAttribute("data-i18n");
@@ -917,14 +940,10 @@
         const val = dict ? dict[key] : null;
         if(val == null) return;
 
-        if(htmlKey){
-          el.innerHTML = val;
-        } else {
-          el.textContent = val;
-        }
+        if(htmlKey) el.innerHTML = val;
+        else el.textContent = val;
       });
 
-      // 3) attribute translations
       document.querySelectorAll("[data-i18n-attr]").forEach(el => {
         const attrs = (el.getAttribute("data-i18n-attr") || "")
           .split(",")
@@ -938,7 +957,6 @@
         });
       });
 
-      // 4) update dropdown button label/flag
       const langObj = LANGS.find(x => x.code === lang) || LANGS.find(x => x.code === "en") || LANGS[0];
       document.getElementById("langBtnFlag").textContent = langObj.flag || "🌐";
       document.getElementById("langBtnCode").textContent = langObj.code;
@@ -974,7 +992,6 @@
           const dict = pickDict(all, lang);
           applyI18n(dict, lang);
 
-          // update selection state
           buildLangMenu(lang);
           closeLangMenu();
         });
@@ -1001,35 +1018,27 @@
       else openLangMenu();
     }
 
-    // Init
     (async function init(){
       document.getElementById("y").textContent = new Date().getFullYear();
 
-      // Determine language: localStorage > browser > en
       const stored = localStorage.getItem("wosc_lang");
       const browser = (navigator.language || "en").toLowerCase();
       const initial = normalizeLang(stored || browser.split("-")[0] || "en");
 
-      // Build menu UI
       buildLangMenu(initial);
 
-      // Dropdown interactions
       document.getElementById("langBtn").addEventListener("click", (e) => {
         e.stopPropagation();
         toggleLangMenu();
       });
       document.addEventListener("click", () => closeLangMenu());
-      document.addEventListener("keydown", (e) => {
-        if(e.key === "Escape") closeLangMenu();
-      });
+      document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeLangMenu(); });
 
-      // Load translations + apply
       try{
         const all = await loadI18n();
         const dict = pickDict(all, initial);
         applyI18n(dict, initial);
       } catch(err){
-        // If index.json fails, page stays in default English
         console.warn(err);
       }
     })();
