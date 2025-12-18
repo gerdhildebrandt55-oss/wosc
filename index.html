@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#070b14" />
 
-  <title>WOSC – Whiteout Survival Community | Discord Guides, SVS, Bear Trap, Transfers</title>
-  <meta name="description" content="WOSC – Whiteout Survival Community. Join our Discord for Whiteout Survival guides, SVS strategy, Bear Trap, Frostfire Mine, state transfers, events, bots and multi-language channels." />
+  <title data-i18n-meta="title">WOSC – Whiteout Survival Community | Discord Guides, SVS, Bear Trap, Transfers</title>
+  <meta name="description" content="WOSC – Whiteout Survival Community. Join our Discord for Whiteout Survival guides, SVS strategy, Bear Trap, Frostfire Mine, state transfers, events, bots and multi-language channels." data-i18n-meta="description" />
   <link rel="canonical" href="https://www.whiteoutsurvival-community.com/" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="WOSC – Whiteout Survival Community" />
-  <meta property="og:title" content="WOSC – Whiteout Survival Community" />
-  <meta property="og:description" content="Whiteout Survival Discord community: Guides • SVS • Bear Trap • Transfers • Events • Multi-language" />
+  <meta property="og:site_name" content="WOSC – Whiteout Survival Community" data-i18n-meta="og:site_name" />
+  <meta property="og:title" content="WOSC – Whiteout Survival Community" data-i18n-meta="og:title" />
+  <meta property="og:description" content="Whiteout Survival Discord community: Guides • SVS • Bear Trap • Transfers • Events • Multi-language" data-i18n-meta="og:description" />
   <meta property="og:url" content="https://www.whiteoutsurvival-community.com/" />
   <meta property="og:image" content="https://www.whiteoutsurvival-community.com/assets/2000members.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -144,6 +144,65 @@
       width:18px; height:18px; display:block; object-fit:contain;
       filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
     }
+
+    /* Language dropdown */
+    .langWrap{position:relative}
+    .langBtn{
+      cursor:pointer;
+      user-select:none;
+      padding:9px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      font-weight:900;
+      font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition: .18s ease;
+    }
+    .langBtn:hover{border-color: rgba(125,211,252,.50); background: rgba(125,211,252,.08); transform: translateY(-1px)}
+    .langBtn:active{transform: translateY(0)}
+    .langMenu{
+      position:absolute;
+      right:0;
+      top:calc(100% + 10px);
+      min-width: 240px;
+      max-height: 360px;
+      overflow:auto;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(8,12,22,.96);
+      box-shadow: 0 22px 70px rgba(0,0,0,.70);
+      padding:8px;
+      display:none;
+      z-index:999;
+      backdrop-filter: blur(10px);
+    }
+    .langMenu.open{display:block}
+    .langItem{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-weight:900;
+      font-size:13px;
+      cursor:pointer;
+      text-align:left;
+      transition:.14s ease;
+    }
+    .langItem:hover{border-color: rgba(125,211,252,.40); background: rgba(125,211,252,.08)}
+    .langLeft{display:flex; align-items:center; gap:10px}
+    .langFlag{font-size:16px; line-height:1}
+    .langCode{color: var(--muted); font-weight:900; font-size:12px}
+    .langCheck{opacity:.0}
+    .langItem[aria-selected="true"] .langCheck{opacity:1}
 
     /* Hero */
     .hero{
@@ -435,6 +494,11 @@
       position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
       clip:rect(0,0,0,0);white-space:nowrap;border:0;
     }
+
+    /* RTL improvements */
+    [dir="rtl"] body{direction:rtl}
+    [dir="rtl"] .topInner{direction:rtl}
+    [dir="rtl"] .nav{justify-content:flex-start}
   </style>
 </head>
 
@@ -442,87 +506,102 @@
   <div class="top">
     <div class="topInner">
       <div class="brand">
-        <img src="/assets/logo.png" alt="WOSC logo" />
+        <img src="/assets/logo.png" alt="WOSC logo" data-i18n-attr="alt" data-i18n-attr-alt="alt.logo" />
         <div>
-          <b>WOSC • Whiteout Survival Community</b>
-          <small>by Bros24 • State 214</small>
+          <b data-i18n="brand.title">WOSC • Whiteout Survival Community</b>
+          <small data-i18n="brand.byline">by Bros24 • State 214</small>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Top navigation">
-        <a class="pill" href="#inside">Server</a>
-        <a class="pill" href="#guides">Guides</a>
-        <a class="pill" href="#events">Events</a>
+      <nav class="nav" aria-label="Top navigation" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.topnav">
+        <a class="pill" href="#inside" data-i18n="nav.server">Server</a>
+        <a class="pill" href="#guides" data-i18n="nav.guides">Guides</a>
+        <a class="pill" href="#events" data-i18n="nav.events">Events</a>
 
         <a class="pill" href="https://www.facebook.com/wosc.community" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/facebook.png" alt="Facebook" /> Facebook
+          <img class="icon" src="/assets/facebook.png" alt="Facebook" data-i18n-attr="alt" data-i18n-attr-alt="alt.facebook" />
+          <span data-i18n="nav.facebook">Facebook</span>
         </a>
         <a class="pill" href="https://www.instagram.com/wosc.whiteout.survival/" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/instagram.jpg" alt="Instagram" /> Instagram
+          <img class="icon" src="/assets/instagram.jpg" alt="Instagram" data-i18n-attr="alt" data-i18n-attr-alt="alt.instagram" />
+          <span data-i18n="nav.instagram">Instagram</span>
         </a>
         <a class="pill" href="https://x.com/WOSCcommunity" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/x.png" alt="X" /> X
+          <img class="icon" src="/assets/x.png" alt="X" data-i18n-attr="alt" data-i18n-attr-alt="alt.x" />
+          <span data-i18n="nav.x">X</span>
         </a>
 
         <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
-          <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" /> JOIN DISCORD
+          <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" data-i18n-attr="alt" data-i18n-attr-alt="alt.discord" />
+          <span data-i18n="nav.join">JOIN DISCORD</span>
         </a>
+
+        <!-- ✅ Language dropdown (top-right) -->
+        <div class="langWrap">
+          <button class="langBtn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="langFlag" id="langBtnFlag">🌐</span>
+            <span id="langBtnLabel" data-i18n="lang.button">Language</span>
+            <span class="langCode" id="langBtnCode">en</span>
+          </button>
+          <div class="langMenu" id="langMenu" role="listbox" aria-label="Language selector"></div>
+        </div>
       </nav>
     </div>
   </div>
 
   <main class="wrap" id="top">
-    <section class="hero" aria-label="Whiteout Survival Discord community hero">
+    <section class="hero" aria-label="Whiteout Survival Discord community hero" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.hero">
       <div class="grain" aria-hidden="true"></div>
 
       <div class="heroInner">
         <!-- Left -->
         <div class="panel heroLeft">
-          <span class="kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
-          <h1>Whiteout Survival Discord community for real strategy.</h1>
-          <p class="sub">
+          <span class="kicker" data-i18n="hero.kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
+          <h1 data-i18n="hero.title">Whiteout Survival Discord community for real strategy.</h1>
+
+          <!-- HTML translation allowed (keeps <strong>) -->
+          <p class="sub" data-i18n-html="hero.sub">
             WOSC is a structured <strong>Whiteout Survival Discord</strong> where you find guides, SVS planning,
             Bear Trap strategy, Frostfire Mine coordination and state transfer updates—fast, clean, and organized.
           </p>
 
           <div class="ctaRow">
             <a class="btn primary" href="https://discord.gg/wos-community" target="_blank" rel="noopener">
-              <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
-              JOIN DISCORD
+              <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" data-i18n-attr="alt" data-i18n-attr-alt="alt.discord" />
+              <span data-i18n="hero.join">JOIN DISCORD</span>
             </a>
-            <a class="btn" href="#inside">SERVER MAP</a>
+            <a class="btn" href="#inside" data-i18n="hero.servermap">SERVER MAP</a>
           </div>
 
-          <div class="stats" aria-label="Highlights">
+          <div class="stats" aria-label="Highlights" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.highlights">
             <div class="stat">
-              <b>Fast help</b>
-              <span>quick-index + dedicated hubs</span>
+              <b data-i18n="stats.fast.title">Fast help</b>
+              <span data-i18n="stats.fast.desc">quick-index + dedicated hubs</span>
             </div>
             <div class="stat">
-              <b>Real planning</b>
-              <span>SVS • Bear Trap • Frostfire</span>
+              <b data-i18n="stats.plan.title">Real planning</b>
+              <span data-i18n="stats.plan.desc">SVS • Bear Trap • Frostfire</span>
             </div>
             <div class="stat">
-              <b>Transfers</b>
-              <span>clear board + grouping</span>
+              <b data-i18n="stats.transfers.title">Transfers</b>
+              <span data-i18n="stats.transfers.desc">clear board + grouping</span>
             </div>
           </div>
 
-          <div class="chips" aria-label="Topics">
-            <span class="chip">SVS strategy</span>
-            <span class="chip">Bear Trap</span>
-            <span class="chip">Frostfire Mine</span>
-            <span class="chip">State transfers</span>
-            <span class="chip">Multi-language</span>
-            <span class="chip">Bots & tools</span>
+          <div class="chips" aria-label="Topics" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.topics">
+            <span class="chip" data-i18n="chips.svs">SVS strategy</span>
+            <span class="chip" data-i18n="chips.bear">Bear Trap</span>
+            <span class="chip" data-i18n="chips.frostfire">Frostfire Mine</span>
+            <span class="chip" data-i18n="chips.transfer">State transfers</span>
+            <span class="chip" data-i18n="chips.multi">Multi-language</span>
+            <span class="chip" data-i18n="chips.bots">Bots & tools</span>
           </div>
 
-          <!-- Brand stamp (fills space professionally) -->
-          <div class="brandStamp" aria-label="WOSC branding">
-            <img src="/assets/avatar.png" alt="WOSC avatar" />
+          <div class="brandStamp" aria-label="WOSC branding" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.branding">
+            <img src="/assets/avatar.png" alt="WOSC avatar" data-i18n-attr="alt" data-i18n-attr-alt="alt.avatar" />
             <div>
-              <strong>WOSC Community</strong>
-              <span>Built by players. For strategy.</span>
+              <strong data-i18n="stamp.title">WOSC Community</strong>
+              <span data-i18n="stamp.desc">Built by players. For strategy.</span>
             </div>
           </div>
         </div>
@@ -530,209 +609,430 @@
         <!-- Right -->
         <div class="panel">
           <div class="rightTop">
-            <b>Community proof</b>
-            <span>Established Aug 2025</span>
+            <b data-i18n="proof.title">Community proof</b>
+            <span data-i18n="proof.established">Established Aug 2025</span>
           </div>
 
           <div class="badge3d">
             <div class="badgeGlow" aria-hidden="true"></div>
-            <img src="/assets/2000members.png" alt="WOSC community milestone graphic" loading="eager" />
+            <img src="/assets/2000members.png" alt="WOSC community milestone graphic" loading="eager" data-i18n-attr="alt" data-i18n-attr-alt="alt.milestone" />
           </div>
 
           <div class="split" style="margin-top:12px">
             <div class="card">
-              <h3>Clean onboarding</h3>
-              <p>Welcome + quick-index + role selection so new members reach the right section instantly.</p>
+              <h3 data-i18n="right.onboarding.title">Clean onboarding</h3>
+              <p data-i18n="right.onboarding.desc">Welcome + quick-index + role selection so new members reach the right section instantly.</p>
             </div>
             <div class="card">
-              <h3>Multi-language</h3>
-              <p>Dedicated chat and voice channels for multiple regions and time zones.</p>
+              <h3 data-i18n="right.multi.title">Multi-language</h3>
+              <p data-i18n="right.multi.desc">Dedicated chat and voice channels for multiple regions and time zones.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ✅ NEW: Announcement (matches existing design) -->
-    <section class="split" id="announcement" aria-label="Bot server upgrade announcement" style="margin-top:12px">
+    <!-- Announcement -->
+    <section class="split" id="announcement" aria-label="Bot server upgrade announcement" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.announcement" style="margin-top:12px">
       <div class="card">
-        <h2>Announcement · Shelty McGuide meets AI</h2>
+        <h2 data-i18n="ann.title">Announcement · Shelty McGuide meets AI</h2>
 
-        <p>
+        <p data-i18n="ann.p1">
           Between Christmas and New Year, we are upgrading the server step by step to prepare the foundation
           for the next stage of WOSC.
         </p>
-        <p style="margin-top:10px">
+        <p style="margin-top:10px" data-i18n-html="ann.p2">
           As part of this upgrade, <strong>Shelty McGuide</strong> gets a bigger home — and a powerful new partner:
           <strong>A.I. Shelbrain</strong>.
         </p>
-        <p style="margin-top:10px">
+        <p style="margin-top:10px" data-i18n-html="ann.p3">
           Starting <strong>January 2026</strong>, Shelty McGuide — supported by A.I. Shelbrain —
           will focus even more on <strong>Whiteout Survival</strong>, providing faster help, smarter answers
           and well-structured information for the entire community.
         </p>
-        <p style="margin-top:10px; color:var(--muted)">
+        <p style="margin-top:10px; color:var(--muted)" data-i18n-html="ann.p4">
           <strong>Availability & exclusivity:</strong> Shelty McGuide and A.I. Shelbrain are available exclusively on this Discord server.
           They will not be distributed to other servers via a server app or public bot listing.
         </p>
 
         <div class="chips" style="margin-top:12px">
-          <span class="chip">Server Upgrade</span>
-          <span class="chip">January 2026</span>
-          <span class="chip">A.I. Shelbrain</span>
-          <span class="chip">Whiteout Survival</span>
-          <span class="chip">Exclusive</span>
+          <span class="chip" data-i18n="ann.chip1">Server Upgrade</span>
+          <span class="chip" data-i18n="ann.chip2">January 2026</span>
+          <span class="chip" data-i18n="ann.chip3">A.I. Shelbrain</span>
+          <span class="chip" data-i18n="ann.chip4">Whiteout Survival</span>
+          <span class="chip" data-i18n="ann.chip5">Exclusive</span>
         </div>
       </div>
 
       <div class="card">
         <div class="badge3d">
           <div class="badgeGlow" aria-hidden="true"></div>
-          <img src="/assets/ai.png" alt="Shelty McGuide meets AI announcement" loading="lazy" />
+          <img src="/assets/ai.png" alt="Shelty McGuide meets AI announcement" loading="lazy" data-i18n-attr="alt" data-i18n-attr-alt="alt.ai" />
         </div>
       </div>
     </section>
 
     <!-- Server overview -->
-    <section class="split" id="inside" aria-label="Discord server map and sections">
+    <section class="split" id="inside" aria-label="Discord server map and sections" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.servermap">
       <div class="card">
-        <h2>Server layout (built for speed)</h2>
+        <h2 data-i18n="layout.title">Server layout (built for speed)</h2>
 
         <div class="menuGrid">
           <div class="menuCol">
-            <b>🟦 INFO & START</b>
+            <b data-i18n="layout.info.title">🟦 INFO & START</b>
             <ul>
-              <li>welcome</li>
-              <li>quick-index</li>
-              <li>select_languages</li>
-              <li>rules-roles</li>
-              <li>player-ids</li>
-              <li>boost-ranking / birthday</li>
+              <li data-i18n="layout.info.li1">welcome</li>
+              <li data-i18n="layout.info.li2">quick-index</li>
+              <li data-i18n="layout.info.li3">select_languages</li>
+              <li data-i18n="layout.info.li4">rules-roles</li>
+              <li data-i18n="layout.info.li5">player-ids</li>
+              <li data-i18n="layout.info.li6">boost-ranking / birthday</li>
             </ul>
           </div>
 
           <div class="menuCol">
-            <b>🟩 COMMUNITY HUB</b>
+            <b data-i18n="layout.hub.title">🟩 COMMUNITY HUB</b>
             <ul>
-              <li>info-hub</li>
-              <li>community-announcements</li>
-              <li>feedback / youtube-zone</li>
-              <li>gift-codes</li>
-              <li>bot-support / bug-reports</li>
-              <li>transfer-board</li>
+              <li data-i18n="layout.hub.li1">info-hub</li>
+              <li data-i18n="layout.hub.li2">community-announcements</li>
+              <li data-i18n="layout.hub.li3">feedback / youtube-zone</li>
+              <li data-i18n="layout.hub.li4">gift-codes</li>
+              <li data-i18n="layout.hub.li5">bot-support / bug-reports</li>
+              <li data-i18n="layout.hub.li6">transfer-board</li>
             </ul>
           </div>
 
           <div class="menuCol">
-            <b>🗨️ COMMUNITY CHAT</b>
+            <b data-i18n="layout.chat.title">🗨️ COMMUNITY CHAT</b>
             <ul>
-              <li>English / German / Polish / …</li>
-              <li>Many language channels</li>
-              <li>Fast help in your language</li>
+              <li data-i18n="layout.chat.li1">English / German / Polish / …</li>
+              <li data-i18n="layout.chat.li2">Many language channels</li>
+              <li data-i18n="layout.chat.li3">Fast help in your language</li>
             </ul>
           </div>
 
           <div class="menuCol">
-            <b>🎙️ VOICE</b>
+            <b data-i18n="layout.voice.title">🎙️ VOICE</b>
             <ul>
-              <li>German / English / Polish voice</li>
-              <li>Training channel</li>
+              <li data-i18n="layout.voice.li1">German / English / Polish voice</li>
+              <li data-i18n="layout.voice.li2">Training channel</li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="card" id="events">
-        <h2>Event & strategy zones</h2>
+        <h2 data-i18n="zones.title">Event & strategy zones</h2>
 
         <div class="menuGrid">
           <div class="menuCol">
-            <b>🧊 EVENT-INFOS</b>
+            <b data-i18n="zones.events.title">🧊 EVENT-INFOS</b>
             <ul>
-              <li>state-vs-state-create</li>
-              <li>fort-stronghold-create</li>
-              <li>frostfire</li>
-              <li>state-transfer</li>
-              <li>frostdragon-create</li>
-              <li>snowbuster / foundry</li>
+              <li data-i18n="zones.events.li1">state-vs-state-create</li>
+              <li data-i18n="zones.events.li2">fort-stronghold-create</li>
+              <li data-i18n="zones.events.li3">frostfire</li>
+              <li data-i18n="zones.events.li4">state-transfer</li>
+              <li data-i18n="zones.events.li5">frostdragon-create</li>
+              <li data-i18n="zones.events.li6">snowbuster / foundry</li>
             </ul>
           </div>
 
           <div class="menuCol" id="guides">
-            <b>🔷 GAME SETTINGS</b>
+            <b data-i18n="zones.settings.title">🔷 GAME SETTINGS</b>
             <ul>
-              <li>building-guide</li>
-              <li>chief-gear / charm-gear</li>
-              <li>research / canyon-battle</li>
-              <li>beartrap / island</li>
-              <li>resources / farm / pets</li>
-              <li>expert-tips / vip-tutorial</li>
+              <li data-i18n="zones.settings.li1">building-guide</li>
+              <li data-i18n="zones.settings.li2">chief-gear / charm-gear</li>
+              <li data-i18n="zones.settings.li3">research / canyon-battle</li>
+              <li data-i18n="zones.settings.li4">beartrap / island</li>
+              <li data-i18n="zones.settings.li5">resources / farm / pets</li>
+              <li data-i18n="zones.settings.li6">expert-tips / vip-tutorial</li>
             </ul>
           </div>
 
           <div class="menuCol">
-            <b>🧑‍🚀 HEROES</b>
+            <b data-i18n="zones.heroes.title">🧑‍🚀 HEROES</b>
             <ul>
-              <li>hero-info / expert</li>
-              <li>gen-1 … gen-14</li>
-              <li>generation breakdowns</li>
+              <li data-i18n="zones.heroes.li1">hero-info / expert</li>
+              <li data-i18n="zones.heroes.li2">gen-1 … gen-14</li>
+              <li data-i18n="zones.heroes.li3">generation breakdowns</li>
             </ul>
           </div>
 
           <div class="menuCol">
-            <b>📚 FORUM & GUIDES</b>
+            <b data-i18n="zones.forum.title">📚 FORUM & GUIDES</b>
             <ul>
-              <li>wos-guides-forum</li>
-              <li>i-need-help</li>
-              <li>transfer-board groups</li>
+              <li data-i18n="zones.forum.li1">wos-guides-forum</li>
+              <li data-i18n="zones.forum.li2">i-need-help</li>
+              <li data-i18n="zones.forum.li3">transfer-board groups</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Conversion (no extra Discord button to avoid overload) -->
-    <section class="split" aria-label="Why join WOSC" style="margin-top:12px">
+    <section class="split" aria-label="Why join WOSC" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.why" style="margin-top:12px">
       <div class="card">
-        <h2>Why WOSC works</h2>
-        <p>
+        <h2 data-i18n="why.title">Why WOSC works</h2>
+        <p data-i18n="why.desc">
           The server is organized like a toolkit: onboarding → guides → events → transfers.
           No chaos, no endless scrolling—open the right section and get answers fast.
         </p>
         <div class="chips" style="margin-top:12px">
-          <span class="chip">Clean navigation</span>
-          <span class="chip">SVS planning</span>
-          <span class="chip">Transfer updates</span>
-          <span class="chip">Active community</span>
+          <span class="chip" data-i18n="why.chip1">Clean navigation</span>
+          <span class="chip" data-i18n="why.chip2">SVS planning</span>
+          <span class="chip" data-i18n="why.chip3">Transfer updates</span>
+          <span class="chip" data-i18n="why.chip4">Active community</span>
         </div>
       </div>
 
       <div class="card">
-        <h2>Join in 10 seconds</h2>
+        <h2 data-i18n="join.title">Join in 10 seconds</h2>
         <ol style="margin:0; padding-left:18px; color:var(--muted); line-height:1.7">
-          <li>Click <strong>JOIN DISCORD</strong> in the header</li>
-          <li>Say hi in <strong>#welcome</strong></li>
-          <li>Choose your language in <strong>#select_languages</strong></li>
-          <li>Use <strong>#quick-index</strong> to jump to the right section</li>
+          <li data-i18n-html="join.li1">Click <strong>JOIN DISCORD</strong> in the header</li>
+          <li data-i18n-html="join.li2">Say hi in <strong>#welcome</strong></li>
+          <li data-i18n-html="join.li3">Choose your language in <strong>#select_languages</strong></li>
+          <li data-i18n-html="join.li4">Use <strong>#quick-index</strong> to jump to the right section</li>
         </ol>
 
         <div class="ctaRow" style="margin-top:12px">
-          <a class="btn" href="#inside">SERVER MAP</a>
+          <a class="btn" href="#inside" data-i18n="join.servermap">SERVER MAP</a>
         </div>
       </div>
     </section>
 
     <footer>
       <div>
-        <span class="metaStrong">© <span id="y"></span> WOSC – Whiteout Survival Community</span>
-        <span> • by Bros24 • State 214 • Established Aug 2025</span>
+        <span class="metaStrong">© <span id="y"></span> <span data-i18n="footer.brand">WOSC – Whiteout Survival Community</span></span>
+        <span data-i18n="footer.by"> • by Bros24 • State 214 • Established Aug 2025</span>
       </div>
-      <div class="srOnly">Whiteout Survival Discord community - guides SVS Bear Trap Frostfire transfers</div>
+      <div class="srOnly" data-i18n="footer.seo">Whiteout Survival Discord community - guides SVS Bear Trap Frostfire transfers</div>
     </footer>
   </main>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // -----------------------------
+    // i18n loader (index.json)
+    // Supports either:
+    // 1) { "en": {...}, "de": {...} }
+    // 2) { "languages": { "en": {...}, ... } }
+    // -----------------------------
+    const I18N_URL = "index.json";
+
+    const LANGS = [
+      { code:"en",    name:"English",                  flag:"🇬🇧" },
+      { code:"de",    name:"Deutsch",                  flag:"🇩🇪" },
+      { code:"fr",    name:"Français",                 flag:"🇫🇷" },
+      { code:"es",    name:"Español",                  flag:"🇪🇸" },
+      { code:"it",    name:"Italiano",                 flag:"🇮🇹" },
+      { code:"ru",    name:"Русский",                  flag:"🇷🇺" },
+      { code:"pt",    name:"Português",                flag:"🇵🇹" },
+      { code:"tr",    name:"Türkçe",                   flag:"🇹🇷" },
+      { code:"ar",    name:"العربية",                  flag:"🇸🇦" },
+      { code:"ja",    name:"日本語",                    flag:"🇯🇵" },
+      { code:"ko",    name:"한국어",                    flag:"🇰🇷" },
+      { code:"zh-cn", name:"中文（简体）",              flag:"🇨🇳" },
+      { code:"zh-tw", name:"中文（繁體）",              flag:"🇹🇼" },
+      { code:"pl",    name:"Polski",                   flag:"🇵🇱" },
+      { code:"id",    name:"Bahasa Indonesia",         flag:"🇮🇩" },
+      { code:"th",    name:"ไทย",                       flag:"🇹🇭" },
+      { code:"nl",    name:"Nederlands",               flag:"🇳🇱" },
+      { code:"hi",    name:"हिन्दी",                    flag:"🇮🇳" },
+      { code:"sv",    name:"Svenska",                  flag:"🇸🇪" },
+      { code:"fil",   name:"Filipino",                 flag:"🇵🇭" },
+      { code:"el",    name:"Ελληνικά",                 flag:"🇬🇷" },
+      { code:"cs",    name:"Čeština",                  flag:"🇨🇿" },
+      { code:"hu",    name:"Magyar",                   flag:"🇭🇺" }
+    ];
+
+    // Back-compat alias: some setups use "zh" for Simplified Chinese
+    const ALIASES = { "zh": "zh-cn" };
+
+    let I18N = null;
+
+    function normalizeLang(code){
+      if(!code) return "en";
+      const c = code.toLowerCase();
+      return ALIASES[c] || c;
+    }
+
+    function pickDict(all, lang){
+      if(!all) return null;
+      const l = normalizeLang(lang);
+      return all[l] || all["en"] || all["de"] || all[Object.keys(all)[0]] || null;
+    }
+
+    async function loadI18n(){
+      if(I18N) return I18N;
+      const res = await fetch(I18N_URL, { cache: "no-store" });
+      if(!res.ok) throw new Error("Failed to load " + I18N_URL);
+      const data = await res.json();
+      I18N = (data && data.languages) ? data.languages : data;
+      return I18N;
+    }
+
+    function setMeta(dict){
+      const metaNodes = document.querySelectorAll("[data-i18n-meta]");
+      metaNodes.forEach(node => {
+        const key = node.getAttribute("data-i18n-meta");
+        const val = dict && dict["meta." + key];
+        if(!val) return;
+
+        if(node.tagName === "TITLE"){
+          document.title = val;
+          return;
+        }
+        if(node.tagName === "META"){
+          if(node.getAttribute("name") === "description"){
+            node.setAttribute("content", val);
+          }
+          if(node.getAttribute("property") === "og:site_name") node.setAttribute("content", val);
+          if(node.getAttribute("property") === "og:title") node.setAttribute("content", val);
+          if(node.getAttribute("property") === "og:description") node.setAttribute("content", val);
+          return;
+        }
+      });
+
+      // Also update visible <title> node text if present
+      const titleEl = document.querySelector("title");
+      const t = dict && dict["meta.title"];
+      if(titleEl && t) titleEl.textContent = t;
+    }
+
+    function applyI18n(dict, langCode){
+      const html = document.documentElement;
+      const lang = normalizeLang(langCode);
+      html.lang = lang;
+      html.dir = (lang === "ar") ? "rtl" : "ltr";
+
+      // 1) meta
+      setMeta(dict);
+
+      // 2) text + html blocks
+      document.querySelectorAll("[data-i18n], [data-i18n-html]").forEach(el => {
+        const htmlKey = el.getAttribute("data-i18n-html");
+        const textKey = el.getAttribute("data-i18n");
+        const key = htmlKey || textKey;
+        if(!key) return;
+
+        const val = dict ? dict[key] : null;
+        if(val == null) return;
+
+        if(htmlKey){
+          el.innerHTML = val;
+        } else {
+          el.textContent = val;
+        }
+      });
+
+      // 3) attribute translations
+      document.querySelectorAll("[data-i18n-attr]").forEach(el => {
+        const attrs = (el.getAttribute("data-i18n-attr") || "")
+          .split(",")
+          .map(s => s.trim())
+          .filter(Boolean);
+
+        attrs.forEach(attr => {
+          const keyAttr = el.getAttribute("data-i18n-attr-" + attr);
+          const val = dict ? dict[keyAttr] : null;
+          if(val != null) el.setAttribute(attr, val);
+        });
+      });
+
+      // 4) update dropdown button label/flag
+      const langObj = LANGS.find(x => x.code === lang) || LANGS.find(x => x.code === "en") || LANGS[0];
+      document.getElementById("langBtnFlag").textContent = langObj.flag || "🌐";
+      document.getElementById("langBtnCode").textContent = langObj.code;
+    }
+
+    function buildLangMenu(current){
+      const menu = document.getElementById("langMenu");
+      menu.innerHTML = "";
+
+      LANGS.forEach(l => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "langItem";
+        btn.setAttribute("role", "option");
+        btn.setAttribute("data-lang", l.code);
+        btn.setAttribute("aria-selected", normalizeLang(current) === normalizeLang(l.code) ? "true" : "false");
+
+        btn.innerHTML = `
+          <span class="langLeft">
+            <span class="langFlag">${l.flag || "🌐"}</span>
+            <span>${l.name}</span>
+          </span>
+          <span class="langRight">
+            <span class="langCode">${l.code}</span>
+            <span class="langCheck">✓</span>
+          </span>
+        `;
+
+        btn.addEventListener("click", async () => {
+          const lang = l.code;
+          localStorage.setItem("wosc_lang", lang);
+          const all = await loadI18n();
+          const dict = pickDict(all, lang);
+          applyI18n(dict, lang);
+
+          // update selection state
+          buildLangMenu(lang);
+          closeLangMenu();
+        });
+
+        menu.appendChild(btn);
+      });
+    }
+
+    function openLangMenu(){
+      const menu = document.getElementById("langMenu");
+      const btn = document.getElementById("langBtn");
+      menu.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+    function closeLangMenu(){
+      const menu = document.getElementById("langMenu");
+      const btn = document.getElementById("langBtn");
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+    function toggleLangMenu(){
+      const menu = document.getElementById("langMenu");
+      if(menu.classList.contains("open")) closeLangMenu();
+      else openLangMenu();
+    }
+
+    // Init
+    (async function init(){
+      document.getElementById("y").textContent = new Date().getFullYear();
+
+      // Determine language: localStorage > browser > en
+      const stored = localStorage.getItem("wosc_lang");
+      const browser = (navigator.language || "en").toLowerCase();
+      const initial = normalizeLang(stored || browser.split("-")[0] || "en");
+
+      // Build menu UI
+      buildLangMenu(initial);
+
+      // Dropdown interactions
+      document.getElementById("langBtn").addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleLangMenu();
+      });
+      document.addEventListener("click", () => closeLangMenu());
+      document.addEventListener("keydown", (e) => {
+        if(e.key === "Escape") closeLangMenu();
+      });
+
+      // Load translations + apply
+      try{
+        const all = await loadI18n();
+        const dict = pickDict(all, initial);
+        applyI18n(dict, initial);
+      } catch(err){
+        // If index.json fails, page stays in default English
+        console.warn(err);
+      }
+    })();
   </script>
 </body>
 </html>
