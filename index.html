@@ -145,16 +145,14 @@
       filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
     }
 
-    /* ✅ Language dropdown (MORE VISIBLE on dark background) */
+    /* ✅ Language dropdown (VISIBLE on dark background) */
     .langWrap{position:relative}
-
     .langBtn{
       cursor:pointer;
       user-select:none;
       padding:10px 12px;
       border-radius:999px;
 
-      /* brighter, CTA-like */
       border:1px solid rgba(125,211,252,.98);
       background: linear-gradient(135deg, rgba(125,211,252,.52), rgba(96,165,250,.20));
       box-shadow:
@@ -182,14 +180,10 @@
         inset 0 1px 0 rgba(255,255,255,.20);
     }
     .langBtn:active{transform: translateY(0)}
-
-    /* subtle attention pulse (disabled if user prefers reduced motion) */
     @media (prefers-reduced-motion: no-preference){
-      .langBtn{
-        animation: langPulse 3.6s ease-in-out infinite;
-      }
+      .langBtn{animation: langPulse 3.6s ease-in-out infinite;}
       @keyframes langPulse{
-        0%, 100%{
+        0%,100%{
           box-shadow:
             0 16px 44px rgba(0,0,0,.62),
             0 0 0 3px rgba(125,211,252,.16),
@@ -206,7 +200,6 @@
       }
     }
 
-    /* make the language code a small badge for readability */
     #langBtnCode{
       padding:4px 8px;
       border-radius:999px;
@@ -308,7 +301,10 @@
         inset 0 1px 0 rgba(255,255,255,.08),
         0 18px 55px rgba(0,0,0,.45);
     }
-    .heroLeft{position:relative; overflow:hidden}
+    .heroLeft{
+      position:relative;
+      overflow:hidden;
+    }
     .heroLeft::after{
       content:"";
       position:absolute;
@@ -332,6 +328,7 @@
       font-weight:950;
       font-size:12.5px;
     }
+
     h1{
       margin:12px 0 8px;
       font-size: clamp(28px, 3.4vw, 46px);
@@ -345,6 +342,7 @@
       line-height: 1.7;
       max-width: 70ch;
     }
+
     .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
@@ -574,7 +572,7 @@
           <span data-i18n="nav.join">JOIN DISCORD</span>
         </a>
 
-        <!-- ✅ Visible language/translation dropdown -->
+        <!-- ✅ Translation dropdown -->
         <div class="langWrap">
           <button class="langBtn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
             <span class="langFlag" id="langBtnFlag">🌐</span>
@@ -592,6 +590,7 @@
       <div class="grain" aria-hidden="true"></div>
 
       <div class="heroInner">
+        <!-- Left -->
         <div class="panel heroLeft">
           <span class="kicker" data-i18n="hero.kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
           <h1 data-i18n="hero.title">Whiteout Survival Discord community for real strategy.</h1>
@@ -642,6 +641,7 @@
           </div>
         </div>
 
+        <!-- Right -->
         <div class="panel">
           <div class="rightTop">
             <b data-i18n="proof.title">Community proof</b>
@@ -667,6 +667,7 @@
       </div>
     </section>
 
+    <!-- Announcement -->
     <section class="split" id="announcement" aria-label="Bot server upgrade announcement" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.announcement" style="margin-top:12px">
       <div class="card">
         <h2 data-i18n="ann.title">Announcement · Shelty McGuide meets AI</h2>
@@ -706,6 +707,7 @@
       </div>
     </section>
 
+    <!-- Server overview -->
     <section class="split" id="inside" aria-label="Discord server map and sections" data-i18n-attr="aria-label" data-i18n-attr-aria-label="aria.servermap">
       <div class="card">
         <h2 data-i18n="layout.title">Server layout (built for speed)</h2>
@@ -843,7 +845,11 @@
   </main>
 
   <script>
-    const I18N_URL = "index.json";
+    // =============================
+    // i18n FIX (works with GitHub Pages subfolders + nested JSON)
+    // =============================
+
+    const I18N_URL = "./index.json"; // IMPORTANT: relative (works in /wosc/ too)
 
     const LANGS = [
       { code:"en",    name:"English",                  flag:"🇬🇧" },
@@ -871,15 +877,47 @@
       { code:"hu",    name:"Magyar",                   flag:"🇭🇺" }
     ];
 
-    // Back-compat alias: some setups use "zh" for Simplified Chinese
+    // Back-compat alias: some json uses "zh" for simplified
     const ALIASES = { "zh": "zh-cn" };
 
     let I18N = null;
 
     function normalizeLang(code){
       if(!code) return "en";
-      const c = code.toLowerCase();
-      return ALIASES[c] || c;
+      let c = String(code).trim().toLowerCase().replace("_","-");
+
+      // handle full locales like "de-DE", "pt-BR"
+      if(c.startsWith("zh-")){
+        // keep zh-cn / zh-tw
+        if(c.startsWith("zh-tw")) return "zh-tw";
+        if(c.startsWith("zh-hk")) return "zh-tw";
+        return "zh-cn";
+      }
+
+      // alias
+      if(ALIASES[c]) return ALIASES[c];
+
+      // strip region if present
+      if(c.includes("-")) c = c.split("-")[0];
+
+      return ALIASES[c] || c || "en";
+    }
+
+    function unwrapContainer(data){
+      if(!data || typeof data !== "object") return data;
+      return data.languages || data.translations || data.locales || data.i18n || data;
+    }
+
+    // supports flat ("hero.title") and nested ({ hero: { title: "" } })
+    function resolveKey(obj, key){
+      if(!obj || !key) return undefined;
+
+      if(Object.prototype.hasOwnProperty.call(obj, key)) return obj[key];
+
+      return key.split(".").reduce((acc, k) => {
+        if(acc && typeof acc === "object" && Object.prototype.hasOwnProperty.call(acc, k)) return acc[k];
+        return undefined;
+      }, obj);
     }
 
     function pickDict(all, lang){
@@ -891,9 +929,9 @@
     async function loadI18n(){
       if(I18N) return I18N;
       const res = await fetch(I18N_URL, { cache: "no-store" });
-      if(!res.ok) throw new Error("Failed to load " + I18N_URL);
-      const data = await res.json();
-      I18N = (data && data.languages) ? data.languages : data;
+      if(!res.ok) throw new Error(`index.json not found: ${res.status} ${res.statusText} (${I18N_URL})`);
+      const raw = await res.json();
+      I18N = unwrapContainer(raw);
       return I18N;
     }
 
@@ -901,31 +939,32 @@
       const metaNodes = document.querySelectorAll("[data-i18n-meta]");
       metaNodes.forEach(node => {
         const key = node.getAttribute("data-i18n-meta");
-        const val = dict && dict["meta." + key];
-        if(!val) return;
+        const val = resolveKey(dict, "meta." + key);
+        if(val == null) return;
 
         if(node.tagName === "TITLE"){
           document.title = val;
           return;
         }
         if(node.tagName === "META"){
-          if(node.getAttribute("name") === "description"){
-            node.setAttribute("content", val);
-          }
+          if(node.getAttribute("name") === "description") node.setAttribute("content", val);
           if(node.getAttribute("property") === "og:site_name") node.setAttribute("content", val);
           if(node.getAttribute("property") === "og:title") node.setAttribute("content", val);
           if(node.getAttribute("property") === "og:description") node.setAttribute("content", val);
         }
       });
 
+      const t = resolveKey(dict, "meta.title");
       const titleEl = document.querySelector("title");
-      const t = dict && dict["meta.title"];
       if(titleEl && t) titleEl.textContent = t;
     }
 
     function applyI18n(dict, langCode){
+      if(!dict) return;
+
       const html = document.documentElement;
       const lang = normalizeLang(langCode);
+
       html.lang = lang;
       html.dir = (lang === "ar") ? "rtl" : "ltr";
 
@@ -937,7 +976,7 @@
         const key = htmlKey || textKey;
         if(!key) return;
 
-        const val = dict ? dict[key] : null;
+        const val = resolveKey(dict, key);
         if(val == null) return;
 
         if(htmlKey) el.innerHTML = val;
@@ -946,13 +985,11 @@
 
       document.querySelectorAll("[data-i18n-attr]").forEach(el => {
         const attrs = (el.getAttribute("data-i18n-attr") || "")
-          .split(",")
-          .map(s => s.trim())
-          .filter(Boolean);
+          .split(",").map(s => s.trim()).filter(Boolean);
 
         attrs.forEach(attr => {
           const keyAttr = el.getAttribute("data-i18n-attr-" + attr);
-          const val = dict ? dict[keyAttr] : null;
+          const val = resolveKey(dict, keyAttr);
           if(val != null) el.setAttribute(attr, val);
         });
       });
@@ -985,15 +1022,22 @@
           </span>
         `;
 
-        btn.addEventListener("click", async () => {
-          const lang = l.code;
-          localStorage.setItem("wosc_lang", lang);
-          const all = await loadI18n();
-          const dict = pickDict(all, lang);
-          applyI18n(dict, lang);
+        btn.addEventListener("click", async (e) => {
+          e.stopPropagation();
+          try{
+            const lang = l.code;
+            localStorage.setItem("wosc_lang", lang);
 
-          buildLangMenu(lang);
-          closeLangMenu();
+            const all = await loadI18n();
+            const dict = pickDict(all, lang);
+            applyI18n(dict, lang);
+
+            buildLangMenu(lang);
+            closeLangMenu();
+          } catch(err){
+            console.error(err);
+            closeLangMenu();
+          }
         });
 
         menu.appendChild(btn);
@@ -1022,8 +1066,8 @@
       document.getElementById("y").textContent = new Date().getFullYear();
 
       const stored = localStorage.getItem("wosc_lang");
-      const browser = (navigator.language || "en").toLowerCase();
-      const initial = normalizeLang(stored || browser.split("-")[0] || "en");
+      const browser = navigator.language || "en";
+      const initial = normalizeLang(stored || browser);
 
       buildLangMenu(initial);
 
@@ -1031,6 +1075,10 @@
         e.stopPropagation();
         toggleLangMenu();
       });
+
+      // prevent menu clicks from closing before selection
+      document.getElementById("langMenu").addEventListener("click", (e) => e.stopPropagation());
+
       document.addEventListener("click", () => closeLangMenu());
       document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeLangMenu(); });
 
@@ -1039,7 +1087,7 @@
         const dict = pickDict(all, initial);
         applyI18n(dict, initial);
       } catch(err){
-        console.warn(err);
+        console.error(err);
       }
     })();
   </script>
