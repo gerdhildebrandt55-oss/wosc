@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#070b14" />
 
-  <!-- i18n meta (wird via JS ersetzt) -->
   <title>WOSC – Whiteout Survival Community | Discord Guides, SVS, Bear Trap, Transfers</title>
   <meta name="description" content="WOSC – Whiteout Survival Community. Join our Discord for Whiteout Survival guides, SVS strategy, Bear Trap, Frostfire Mine, state transfers, events, bots and multi-language channels." />
   <link rel="canonical" href="https://www.whiteoutsurvival-community.com/" />
@@ -20,7 +19,6 @@
 
   <link rel="icon" href="/assets/logo.png" />
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -58,7 +56,6 @@
     }
     a{color:inherit; text-decoration:none}
 
-    /* Background */
     body::before{
       content:"";
       position:fixed; inset:0; z-index:-3;
@@ -88,7 +85,6 @@
 
     .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 26px}
 
-    /* Header */
     .top{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
@@ -142,7 +138,6 @@
       filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
     }
 
-    /* ✅ Translation button visible on dark bg */
     .langWrap{position:relative}
     .langBtn{
       cursor:pointer;
@@ -224,7 +219,6 @@
     .langCheck{opacity:0}
     .langItem[aria-selected="true"] .langCheck{opacity:1}
 
-    /* Hero */
     .hero{
       margin-top:14px;
       border-radius: calc(var(--r) + 10px);
@@ -329,9 +323,9 @@
     .btn:hover{filter:brightness(1.06); transform: translateY(-1px)}
     .btn:active{transform: translateY(0)}
 
-    /* ✅ BuyMeACoffee button wrapper (size + style aligned with .btn) */
+    /* ✅ FIX: BuyMeACoffee breiter, damit Text komplett sichtbar ist */
     .bmcWrap{
-      width: 150px;
+      width: 230px;               /* <- breiter */
       height: 46px;
       border-radius: 14px;
       border:1px solid rgba(255,255,255,.12);
@@ -345,15 +339,15 @@
     }
     .bmcWrap iframe{
       border:0 !important;
-      width:220px !important;
-      height:70px !important;
-      transform: scale(.66);
+      width: 380px !important;    /* <- größerer iframe */
+      height: 70px !important;
+      transform: scale(.60);      /* <- gleich “Größe ok”, aber mehr Breite sichtbar */
       transform-origin: left center;
       filter: drop-shadow(0 10px 26px rgba(0,0,0,.45));
     }
     @media (max-width: 560px){
-      .bmcWrap{ width: 142px; height: 44px; }
-      .bmcWrap iframe{ transform: scale(.63); }
+      .bmcWrap{ width: 210px; height: 44px; }
+      .bmcWrap iframe{ transform: scale(.57); width: 380px !important; }
     }
 
     .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:14px}
@@ -556,7 +550,6 @@
           <span data-i18n="nav.joinDiscord">JOIN DISCORD</span>
         </a>
 
-        <!-- ✅ Language dropdown -->
         <div class="langWrap">
           <button class="langBtn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false">
             <span class="langFlag" id="langBtnFlag">🌐</span>
@@ -574,7 +567,6 @@
       <div class="grain" aria-hidden="true"></div>
 
       <div class="heroInner">
-        <!-- Left -->
         <div class="panel heroLeft">
           <span class="kicker" data-i18n="hero.kicker">🌨️ Whiteout Survival • Global Strategy Hub</span>
           <h1 data-i18n="hero.headline">Whiteout Survival Discord community for real strategy.</h1>
@@ -589,9 +581,10 @@
               <img class="icon" src="/assets/discord-logo.jpg" alt="Discord" />
               <span data-i18n="hero.btn.joinDiscord">JOIN DISCORD</span>
             </a>
+
             <a class="btn" href="#inside" data-i18n="hero.btn.serverMap">SERVER MAP</a>
 
-            <!-- ✅ BuyMeACoffee: sichtbar, aber nicht nervig (inline, passend skaliert) -->
+            <!-- ✅ BuyMeACoffee (fix: breiter) -->
             <div class="bmcWrap" aria-label="Buy me a coffee support button">
               <script
                 type="text/javascript"
@@ -641,7 +634,6 @@
           </div>
         </div>
 
-        <!-- Right -->
         <div class="panel">
           <div class="rightTop">
             <b data-i18n="right.proof">Community proof</b>
@@ -671,7 +663,6 @@
       </div>
     </section>
 
-    <!-- Announcement -->
     <section class="split" id="announcement" style="margin-top:12px">
       <div class="card">
         <h2 data-i18n="announce.title">Announcement · Shelty McGuide meets AI</h2>
@@ -711,7 +702,6 @@
       </div>
     </section>
 
-    <!-- Server layout -->
     <section class="split" id="inside" style="margin-top:12px">
       <div class="card">
         <h2 data-i18n="layout.title">Server layout (built for speed)</h2>
@@ -809,7 +799,6 @@
       </div>
     </section>
 
-    <!-- Why + Join -->
     <section class="split" style="margin-top:12px">
       <div class="card">
         <h2 data-i18n="why.title">Why WOSC works</h2>
@@ -852,7 +841,6 @@
   </main>
 
   <script>
-    // index.json liegt im selben Ordner
     const I18N_URL = "./index.json";
 
     const LANGS = [
@@ -959,21 +947,18 @@
 
       setMeta(primary, fallback);
 
-      // text nodes
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         const val = t(primary, fallback, key);
         if(val != null) el.textContent = val;
       });
 
-      // html nodes
       document.querySelectorAll("[data-i18n-html]").forEach(el => {
         const key = el.getAttribute("data-i18n-html");
         const val = t(primary, fallback, key);
         if(val != null) el.innerHTML = val;
       });
 
-      // button UI
       const langObj = LANGS.find(x => normalizeLang(x.code) === lang) || LANGS.find(x => x.code === "en") || LANGS[0];
       document.getElementById("langBtnFlag").textContent = langObj.flag || "🌐";
       document.getElementById("langBtnCode").textContent = langObj.code;
