@@ -1127,8 +1127,7 @@
 
     <footer class="reveal">
       <div>
-        <span class="metaStrong">© <span id="y"></span> <span data-i18n="footer.brand">WOSC – Whiteout Survival Community</span></span>
-        <span data-i18n="footer.meta"> · von Bros24 · State 214</span>
+        <span class="metaStrong">© <span id="y"></span> <span data-i18n="footer.brand">WOSC – Whiteout Survival Community</span> · <a href="https://discord.gg/wos-community" target="_blank" rel="noopener">discord.gg/wos-community</a></span> · <span data-i18n="footer.meta">Built by Bros24 · State 214</span>
       </div>
       <p style="margin:10px 0 0; font-size:13px">
         <a href="https://discord.gg/wos-community" target="_blank" rel="noopener">Discord</a> ·
@@ -1408,7 +1407,7 @@ function applyI18n(primary, fallback, langCode){
     }
 
     (async function init(){
-      document.getElementById("y").textContent = new Date().getFullYear();
+      document.getElementById("y").textContent = "2026";
 
       const urlLang = new URLSearchParams(window.location.search).get("lang");
       if(urlLang){ localStorage.setItem("wosc_lang", urlLang); }
