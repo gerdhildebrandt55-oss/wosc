@@ -114,7 +114,8 @@
     "seoBlock.p2": "Inside the server you’ll get clean onboarding, a quick-index, dedicated event hubs, and multi-language channels. We focus on practical planning: what to save, what to do on event days, and how to coordinate as an alliance/state.",
     "seoBlock.p3": "If you want help with hero progression, event rotations, and transfer preparation, join the Discord and use the guide sections linked above.",
     "nav.heroesExperts": "Heroes & Experts",
-    "nav.heroesWeb": "Hero Guides Web"
+    "nav.heroesWeb": "Hero Guides Web",
+    "nav.kompendium": "Compendium"
   },
   "de": {
     "meta.title": "WOSC – Whiteout Survival Community | Discord Guides, SVS, Bear Trap, Transfers",
@@ -231,7 +232,8 @@
     "seoBlock.p2": "Im Server bekommst du sauberes Onboarding, einen quick-index, dedizierte Event-Hubs und mehrsprachige Channels. Unser Fokus: praktische Planung – was sparen, was wann machen, wie als Allianz/State koordinieren.",
     "seoBlock.p3": "Wenn du Hilfe bei Helden-Progress, Event-Rotation und Transfer-Vorbereitung willst, komm in den Discord und nutze die Guide-Bereiche oben.",
     "nav.heroesExperts": "Helden & Experts",
-    "nav.heroesWeb": "Helden-Guides Web"
+    "nav.heroesWeb": "Helden-Guides Web",
+    "nav.kompendium": "Kompendium"
   },
   "fr": {
     "meta.title": "WOSC – Communauté Whiteout Survival | Guides Discord, SVS, Bear Trap, Transferts",
@@ -348,7 +350,8 @@
     "seoBlock.title": "Whiteout Survival Hub Stratégie – ce que tu trouves ici",
     "seoBlock.p1": "Ce site est la vitrine de notre Discord : une communauté Whiteout Survival structurée avec des guides pour SVS, Bear Trap, Frostfire Mine et les transferts d'État. Si tu en as marre du chaos et des mauvais timings, tu es au bon endroit.",
     "seoBlock.p2": "Sur le serveur tu as un onboarding clair, un quick-index, des hubs d'événements dédiés et des salons multilingues. Notre focus : la planification pratique – quoi épargner, quoi faire quand, comment coordonner en alliance ou en État.",
-    "seoBlock.p3": "Si tu veux de l'aide sur la progression des héros, la rotation des événements et la préparation aux transferts, rejoins le Discord et utilise les sections de guides ci-dessus."
+    "seoBlock.p3": "Si tu veux de l'aide sur la progression des héros, la rotation des événements et la préparation aux transferts, rejoins le Discord et utilise les sections de guides ci-dessus.",
+    "nav.kompendium": "Compendium"
   },
   "es": {
     "meta.title": "WOSC – Comunidad de Whiteout Survival | Guías Discord, SVS, Bear Trap, Transfers",
@@ -465,7 +468,8 @@
     "seoBlock.p1": "Esta página es la puerta de entrada a nuestro Discord: una comunidad Whiteout Survival estructurada con guías de SVS, Bear Trap, Frostfire Mine y transferencias de estado. Si estás harto del caos y los malos timings, estás en el lugar correcto.",
     "seoBlock.p2": "En el servidor tienes onboarding claro, quick-index, hubs de eventos dedicados y canales multilingües. Nos centramos en la planificación práctica: qué ahorrar, qué hacer cuándo, cómo coordinar como alianza o estado.",
     "seoBlock.p3": "Si quieres ayuda con la progresión de héroes, la rotación de eventos y la preparación para transferencias, únete al Discord y usa las secciones de guías enlazadas arriba.",
-    "seoBlock.title": "Whiteout Survival Hub de Estrategia – qué encontrarás aquí"
+    "seoBlock.title": "Whiteout Survival Hub de Estrategia – qué encontrarás aquí",
+    "nav.kompendium": "Compendio"
   },
   "it": {
     "meta.title": "WOSC – Community di Whiteout Survival | Guide Discord, SVS, Bear Trap, Transfer",
@@ -582,7 +586,8 @@
     "seoBlock.p1": "Questo sito è la vetrina del nostro Discord: una community Whiteout Survival strutturata con guide per SVS, Bear Trap, Frostfire Mine e transfer di stato. Se sei stanco del caos e dei timing sbagliati, sei nel posto giusto.",
     "seoBlock.p2": "Nel server hai onboarding chiaro, quick-index, hub eventi dedicati e canali multilingua. Il nostro focus: pianificazione pratica – cosa risparmiare, cosa fare quando, come coordinare come alleanza/stato.",
     "seoBlock.p3": "Se vuoi aiuto su progressione eroi, rotazione eventi e preparazione ai transfer, entra nel Discord e usa le sezioni guida linkate sopra.",
-    "seoBlock.title": "Whiteout Survival Hub Strategia – cosa trovi qui"
+    "seoBlock.title": "Whiteout Survival Hub Strategia – cosa trovi qui",
+    "nav.kompendium": "Compendio"
   },
   "ru": {
     "meta.title": "WOSC – Сообщество Whiteout Survival | Discord гайды, SVS, Bear Trap, Transfers",
@@ -699,7 +704,8 @@
     "seoBlock.p1": "Этот сайт — витрина нашего Discord: структурированное сообщество Whiteout Survival с гайдами по SVS, Bear Trap, Frostfire Mine и трансферам штатов. Если надоел хаос и неправильный тайминг — ты там, где нужно.",
     "seoBlock.p2": "На сервере есть понятный онбординг, quick-index, отдельные хабы под ивенты и мультиязычные каналы. Фокус на практике: что копить, что делать когда, как координироваться альянсом/штатом.",
     "seoBlock.p3": "Если нужна помощь с прогрессом героев, ротацией ивентов и подготовкой к трансферу — заходи в Discord и используй разделы гайдов выше.",
-    "seoBlock.title": "Whiteout Survival Стратегический хаб – что ты найдёшь здесь"
+    "seoBlock.title": "Whiteout Survival Стратегический хаб – что ты найдёшь здесь",
+    "nav.kompendium": "Компендиум"
   },
   "pt": {
     "meta.title": "WOSC – Comunidade Whiteout Survival | Guias Discord, SVS, Bear Trap, Transfers",
@@ -816,7 +822,8 @@
     "seoBlock.p1": "Este site é a montra do nosso Discord: uma comunidade Whiteout Survival estruturada com guias para SVS, Bear Trap, Frostfire Mine e transferências de estado. Se estás farto do caos e dos timings errados, estás no sítio certo.",
     "seoBlock.p2": "No servidor tens onboarding claro, quick-index, hubs de eventos dedicados e canais multilingues. O nosso foco: planeamento prático – o que poupar, o que fazer quando, como coordenar como aliança/estado.",
     "seoBlock.p3": "Se queres ajuda com progressão de heróis, rotação de eventos e preparação para transferências, entra no Discord e usa as secções de guias em cima.",
-    "seoBlock.title": "Whiteout Survival Hub de Estratégia – o que encontras aqui"
+    "seoBlock.title": "Whiteout Survival Hub de Estratégia – o que encontras aqui",
+    "nav.kompendium": "Compêndio"
   },
   "tr": {
     "meta.title": "WOSC – Whiteout Survival Topluluğu | Discord Rehberleri, SVS, Bear Trap, Transferler",
@@ -933,7 +940,8 @@
     "seoBlock.p1": "Bu site Discord'umuzun vitrinidir: SVS, Bear Trap, Frostfire Mine ve Eyalet Transferleri için rehberlerle yapılandırılmış bir Whiteout Survival topluluğu. Kaos ve yanlış zamanlamadan bıktıysan doğru yerdesin.",
     "seoBlock.p2": "Sunucuda net bir karşılama, quick-index, özel etkinlik merkezleri ve çok dilli kanallar var. Odağımız: pratik planlama – ne biriktirilecek, ne zaman yapılacak, ittifak/eyalet olarak nasıl koordine edilecek.",
     "seoBlock.p3": "Kahraman ilerlemesi, etkinlik rotasyonu ve transfer hazırlığı konusunda yardım istiyorsan Discord'a katıl ve yukarıdaki rehber bölümlerini kullan.",
-    "seoBlock.title": "Whiteout Survival Strateji Merkezi – burada ne bulacaksın"
+    "seoBlock.title": "Whiteout Survival Strateji Merkezi – burada ne bulacaksın",
+    "nav.kompendium": "Kompendium"
   },
   "ar": {
     "meta.title": "WOSC – مجتمع Whiteout Survival | أدلة ديسكورد، SVS، Bear Trap، التحويلات",
@@ -1050,7 +1058,8 @@
     "seoBlock.p1": "هذا الموقع هو الواجهة أمام ديسكوردنا: مجتمع Whiteout Survival منظم مع أدلة لـ SVS وBear Trap وFrostfire Mine وتحويلات الولاية. إذا سئمت الفوضى والتوقيت الخاطئ، فأنت في المكان الصحيح.",
     "seoBlock.p2": "داخل السيرفر تحصل على onboarding واضح وquick-index ومراكز أحداث مخصصة وقنوات متعددة اللغات. نركز على التخطيط العملي: ماذا نوفر وماذا نفعل متى وكيف ننسق كتحالف/ولاية.",
     "seoBlock.p3": "إذا أردت مساعدة في تقدم الأبطال ودورة الأحداث والتحضير للتحويل، انضم إلى الديسكورد واستخدم أقسام الأدلة أعلاه.",
-    "seoBlock.title": "مركز استراتيجية Whiteout Survival – ما ستجده هنا"
+    "seoBlock.title": "مركز استراتيجية Whiteout Survival – ما ستجده هنا",
+    "nav.kompendium": "المرجع"
   },
   "ja": {
     "meta.title": "WOSC – Whiteout Survival コミュニティ | Discordガイド・SVS・Bear Trap・Transfers",
@@ -1167,7 +1176,8 @@
     "seoBlock.p1": "このサイトは当Discordの入口です。SVS・Bear Trap・Frostfire Mine・州転送のガイド付き、整理されたWhiteout Survivalコミュニティ。混沌やタイミングミスにうんざりなら、ここが合っています。",
     "seoBlock.p2": "サーバーでは明確なオンboarding、quick-index、専用イベントハブ、多言語チャンネルがあります。実践的な計画に重点：何を貯めるか、いつ何をするか、同盟・州としてどう連携するか。",
     "seoBlock.p3": "ヒーロー進行・イベントローテ・転送準備の助けが必要なら、Discordに参加して上記のガイドセクションを使ってください。",
-    "seoBlock.title": "Whiteout Survival戦略ハブ – ここで見つかること"
+    "seoBlock.title": "Whiteout Survival戦略ハブ – ここで見つかること",
+    "nav.kompendium": "コンペンディアム"
   },
   "ko": {
     "meta.title": "WOSC – Whiteout Survival 커뮤니티 | Discord 가이드, SVS, Bear Trap, Transfers",
@@ -1284,7 +1294,8 @@
     "seoBlock.p1": "이 사이트는 우리 디스코드의 정문입니다. SVS, Bear Trap, Frostfire Mine, 주 이전 가이드가 있는 체계적인 Whiteout Survival 커뮤니티. 혼란과 잘못된 타이밍에 지쳤다면 여기가 맞습니다.",
     "seoBlock.p2": "서버에서는 명확한 온보딩, quick-index, 전용 이벤트 허브, 다국어 채널을 제공합니다. 실질적인 계획에 초점: 무엇을 모을지, 언제 무엇을 할지, 동맹/주로서 어떻게 조율할지.",
     "seoBlock.p3": "영웅 진행, 이벤트 로테이션, 이전 준비에 도움이 필요하면 디스코드에 참가해 위 가이드 섹션을 이용하세요.",
-    "seoBlock.title": "Whiteout Survival 전략 허브 – 여기서 찾을 수 있는 것"
+    "seoBlock.title": "Whiteout Survival 전략 허브 – 여기서 찾을 수 있는 것",
+    "nav.kompendium": "컴펜디움"
   },
   "zh-cn": {
     "meta.title": "WOSC – Whiteout Survival 社区 | Discord指南、SVS、Bear Trap、Transfers",
@@ -1401,7 +1412,8 @@
     "seoBlock.p1": "本站是我们Discord的入口：一个配有SVS、Bear Trap、Frostfire Mine和州转移攻略的结构化Whiteout Survival社区。如果你厌倦了混乱和错误时机，来这就对了。",
     "seoBlock.p2": "服务器内提供清晰的入门、quick-index、专属活动中心和多语言频道。我们注重实用规划：存什么、何时做什么、如何以联盟/州协调。",
     "seoBlock.p3": "如需英雄进度、活动轮换和转移准备方面的帮助，请加入Discord并使用上方攻略区块。",
-    "seoBlock.title": "Whiteout Survival 策略中心 – 你能在这里找到什么"
+    "seoBlock.title": "Whiteout Survival 策略中心 – 你能在这里找到什么",
+    "nav.kompendium": "资料库"
   },
   "zh-tw": {
     "meta.title": "WOSC – Whiteout Survival 社群 | Discord指南、SVS、Bear Trap、Transfers",
@@ -1518,7 +1530,8 @@
     "seoBlock.p1": "本站是我們Discord的入口：一個配有SVS、Bear Trap、Frostfire Mine與州轉移攻略的結構化Whiteout Survival社群。若你厭倦混亂與錯誤時機，來這就對了。",
     "seoBlock.p2": "伺服器內有清晰入門、quick-index、專屬活動中心與多語頻道。我們注重實務規劃：存什麼、何時做什麼、如何以聯盟/州協調。",
     "seoBlock.p3": "若需要英雄進度、活動輪替與轉移準備的協助，請加入Discord並使用上方攻略區塊。",
-    "seoBlock.title": "Whiteout Survival 策略中心 – 你在這裡能找到什麼"
+    "seoBlock.title": "Whiteout Survival 策略中心 – 你在這裡能找到什麼",
+    "nav.kompendium": "資料庫"
   },
   "pl": {
     "meta.title": "WOSC – Whiteout Survival Community | Poradniki Discord, SVS, Bear Trap, Transfer",
@@ -1635,7 +1648,8 @@
     "seoBlock.p1": "Ta strona to wejście do naszego Discorda: uporządkowana społeczność Whiteout Survival z poradnikami do SVS, Bear Trap, Frostfire Mine i transferów stanu. Jeśli masz dość chaosu i złego timingu, jesteś we właściwym miejscu.",
     "seoBlock.p2": "Na serwerze: jasny onboarding, quick-index, dedykowane huby eventów i kanały wielojęzyczne. Skupiamy się na praktycznym planowaniu: co oszczędzać, co robić kiedy, jak koordynować jako sojusz/stan.",
     "seoBlock.p3": "Jeśli chcesz pomocy w progresji bohaterów, rotacji eventów i przygotowaniu do transferu, dołącz do Discorda i użyj sekcji poradników powyżej.",
-    "seoBlock.title": "Whiteout Survival Hub strategii – co tu znajdziesz"
+    "seoBlock.title": "Whiteout Survival Hub strategii – co tu znajdziesz",
+    "nav.kompendium": "Kompendium"
   },
   "id": {
     "meta.title": "WOSC – Komunitas Whiteout Survival | Panduan Discord, SVS, Bear Trap, Transfers",
@@ -1752,7 +1766,8 @@
     "seoBlock.p1": "Situs ini adalah pintu masuk ke Discord kami: komunitas Whiteout Survival terstruktur dengan panduan SVS, Bear Trap, Frostfire Mine, dan transfer negara. Jika kamu lelah dengan chaos dan timing yang salah, kamu di tempat yang tepat.",
     "seoBlock.p2": "Di server ada onboarding jelas, quick-index, hub acara khusus, dan saluran multibahasa. Fokus kami: perencanaan praktis – apa yang ditabung, apa yang dilakukan kapan, bagaimana mengoordinasi sebagai aliansi/negara.",
     "seoBlock.p3": "Jika butuh bantuan progres pahlawan, rotasi acara, dan persiapan transfer, gabung Discord dan gunakan bagian panduan di atas.",
-    "seoBlock.title": "Whiteout Survival Hub Strategi – yang kamu temukan di sini"
+    "seoBlock.title": "Whiteout Survival Hub Strategi – yang kamu temukan di sini",
+    "nav.kompendium": "Kompendium"
   },
   "th": {
     "meta.title": "WOSC – ชุมชน Whiteout Survival | คู่มือ Discord, SVS, Bear Trap, Transfers",
@@ -1869,7 +1884,8 @@
     "seoBlock.p1": "ไซต์นี้คือประตูสู่ Discord ของเรา: ชุมชน Whiteout Survival ที่มีโครงสร้าง พร้อมคู่มือ SVS, Bear Trap, Frostfire Mine และการโอนรัฐ หากคุณเบื่อความวุ่นวายและจังหวะที่ไม่ตรง นี่คือที่ที่เหมาะ",
     "seoBlock.p2": "ในเซิร์ฟเวอร์มี onboarding ชัดเจน quick-index ฮับอีเวนต์เฉพาะ และช่องหลายภาษา เราเน้นการวางแผนเชิงปฏิบัติ: ออมอะไร ทำอะไรเมื่อไหร่ ประสานงานอย่างไรในฐานะพันธมิตร/รัฐ",
     "seoBlock.p3": "หากต้องการความช่วยเหลือเรื่องความก้าวหน้าฮีโร่ การหมุนอีเวนต์ และการเตรียมโอน เข้าร่วม Discord และใช้ส่วนคู่มือด้านบน",
-    "seoBlock.title": "Whiteout Survival ศูนย์กลยุทธ์ – สิ่งที่คุณจะพบที่นี่"
+    "seoBlock.title": "Whiteout Survival ศูนย์กลยุทธ์ – สิ่งที่คุณจะพบที่นี่",
+    "nav.kompendium": "คลังข้อมูล"
   },
   "nl": {
     "meta.title": "WOSC – Whiteout Survival Community | Discord-guides, SVS, Bear Trap, Transfers",
@@ -1986,7 +2002,8 @@
     "seoBlock.p1": "Deze site is de voordeur van onze Discord: een gestructureerde Whiteout Survival community met gidsen voor SVS, Bear Trap, Frostfire Mine en state transfers. Als je klaar bent met chaos en verkeerde timing, ben je hier op de juiste plek.",
     "seoBlock.p2": "Op de server krijg je duidelijke onboarding, een quick-index, dedicated eventhubs en meertalige kanalen. We richten ons op praktische planning: wat sparen, wat wanneer doen, hoe coördineren als alliantie/staat.",
     "seoBlock.p3": "Wil je hulp bij heldenprogressie, eventrotatie en transfervoorbereiding, join dan de Discord en gebruik de gidssecties hierboven.",
-    "seoBlock.title": "Whiteout Survival Strategiehub – wat je hier vindt"
+    "seoBlock.title": "Whiteout Survival Strategiehub – wat je hier vindt",
+    "nav.kompendium": "Compendium"
   },
   "hi": {
     "meta.title": "WOSC – Whiteout Survival समुदाय | Discord गाइड्स, SVS, Bear Trap, Transfers",
@@ -2103,7 +2120,8 @@
     "seoBlock.p1": "यह साइट हमारे Discord का मुख्य द्वार है: SVS, Bear Trap, Frostfire Mine और स्टेट ट्रांसफर के लिए गाइड के साथ एक संरचित Whiteout Survival समुदाय। अगर आप अव्यवस्था और गलत टाइमिंग से थक गए हैं, तो आप सही जगह पर हैं।",
     "seoBlock.p2": "सर्वर पर साफ onboarding, quick-index, समर्पित इवेंट हब और बहुभाषी चैनल मिलते हैं। फोकस: व्यावहारिक प्लानिंग – क्या बचाना है, कब क्या करना है, गठबंधन/राज्य के रूप में कैसे समन्वय करें।",
     "seoBlock.p3": "हीरो प्रोग्रेस, इवेंट रोटेशन और ट्रांसफर तैयारी में मदद चाहिए तो Discord में जुड़ें और ऊपर दिए गाइड सेक्शन इस्तेमाल करें।",
-    "seoBlock.title": "Whiteout Survival रणनीति हब – यहाँ क्या मिलेगा"
+    "seoBlock.title": "Whiteout Survival रणनीति हब – यहाँ क्या मिलेगा",
+    "nav.kompendium": "संग्रह"
   },
   "sv": {
     "meta.title": "WOSC – Whiteout Survival Community | Discord-guider, SVS, Bear Trap, Transfers",
@@ -2220,7 +2238,8 @@
     "seoBlock.p1": "Den här sidan är ingången till vår Discord: en strukturerad Whiteout Survival-community med guider för SVS, Bear Trap, Frostfire Mine och state transfers. Om du är trött på kaos och fel timing är du på rätt plats.",
     "seoBlock.p2": "På servern får du tydlig onboarding, quick-index, dedikerade eventhubbar och flerspråkiga kanaler. Vi fokuserar på praktisk planering: vad man sparar, vad man gör när, hur man koordinerar som allians/state.",
     "seoBlock.p3": "Vill du ha hjälp med hjälteframsteg, eventrotation och transferförberedelser, gå med i Discord och använd guidesektionerna ovan.",
-    "seoBlock.title": "Whiteout Survival Strategihubb – vad du hittar här"
+    "seoBlock.title": "Whiteout Survival Strategihubb – vad du hittar här",
+    "nav.kompendium": "Kompendium"
   },
   "fil": {
     "meta.title": "WOSC – Whiteout Survival Community | Discord Guides, SVS, Bear Trap, Transfers",
@@ -2337,7 +2356,8 @@
     "seoBlock.p1": "Ang site na ito ay pintuan sa aming Discord: isang istrukturadong komunidad ng Whiteout Survival na may mga gabay para sa SVS, Bear Trap, Frostfire Mine at State Transfers. Kung sawa ka na sa gulo at maling timing, narito ka sa tamang lugar.",
     "seoBlock.p2": "Sa server may malinaw na onboarding, quick-index, dedicated event hubs at multi-language channels. Ang focus namin: praktikal na pagpaplano – ano ang iipunin, ano ang gagawin kailan, paano mag-coordinate bilang alyansa/state.",
     "seoBlock.p3": "Kung gusto mo ng tulong sa hero progression, event rotation at transfer prep, sumali sa Discord at gamitin ang mga guide section sa itaas.",
-    "seoBlock.title": "Whiteout Survival Strategy Hub – ano ang makikita mo rito"
+    "seoBlock.title": "Whiteout Survival Strategy Hub – ano ang makikita mo rito",
+    "nav.kompendium": "Kompendium"
   },
   "el": {
     "meta.title": "WOSC – Κοινότητα Whiteout Survival | Discord οδηγοί, SVS, Bear Trap, Transfers",
@@ -2454,7 +2474,8 @@
     "seoBlock.p1": "Αυτή η σελίδα είναι η είσοδος στο Discord μας: δομημένη κοινότητα Whiteout Survival με οδηγούς για SVS, Bear Trap, Frostfire Mine και μεταφορές πολιτειών. Αν βαρέθηκες το χάος και το λάθος timing, είσαι στο σωστό μέρος.",
     "seoBlock.p2": "Στον server έχεις ξεκάθαρο onboarding, quick-index, αφοσιωμένα event hubs και πολύγλωσσα κανάλια. Επικεντρωνόμαστε στην πρακτική σχεδίαση: τι να εξοικονομήσεις, τι να κάνεις πότε, πώς να συντονιστείς ως συμμαχία/πολιτεία.",
     "seoBlock.p3": "Αν χρειάζεσαι βοήθεια με την πρόοδο ηρώων, την εναλλαγή events και την προετοιμασία μεταφοράς, μπες στο Discord και χρησιμοποίησε τα τμήματα οδηγών πάνω.",
-    "seoBlock.title": "Whiteout Survival Κέντρο Στρατηγικής – τι θα βρεις εδώ"
+    "seoBlock.title": "Whiteout Survival Κέντρο Στρατηγικής – τι θα βρεις εδώ",
+    "nav.kompendium": "Εγκόλπιο"
   },
   "cs": {
     "meta.title": "WOSC – Whiteout Survival komunita | Discord návody, SVS, Bear Trap, Transfers",
@@ -2571,7 +2592,8 @@
     "seoBlock.p1": "Tato stránka je vstupní branou na náš Discord: strukturovaná komunita Whiteout Survival s průvodci pro SVS, Bear Trap, Frostfire Mine a převody států. Pokud máte dost chaosu a špatného načasování, jste na správném místě.",
     "seoBlock.p2": "Na serveru máte jasné onboarding, quick-index, vyhrazené event huby a vícejazyčné kanály. Zaměřujeme se na praktické plánování: co šetřit, co kdy dělat, jak koordinovat jako aliance/stát.",
     "seoBlock.p3": "Chcete-li pomoc s postupem hrdinů, rotací eventů a přípravou na převod, připojte se k Discordu a použijte sekce průvodců výše.",
-    "seoBlock.title": "Whiteout Survival Strategický hub – co zde najdete"
+    "seoBlock.title": "Whiteout Survival Strategický hub – co zde najdete",
+    "nav.kompendium": "Kompendium"
   },
   "hu": {
     "meta.title": "WOSC – Whiteout Survival közösség | Discord útmutatók, SVS, Bear Trap, Transfers",
@@ -2688,6 +2710,7 @@
     "seoBlock.p1": "Ez az oldal a Discordunk bejárata: strukturált Whiteout Survival közösség SVS, Bear Trap, Frostfire Mine és államátvitel útmutatókkal. Ha eleged van a káoszból és a rossz időzítésből, itt a helyed.",
     "seoBlock.p2": "A szerveren tiszta onboarding, quick-index, dedikált esemény hubok és többnyelvű csatornák vannak. Gyakorlati tervezésre fókuszálunk: mit spórolj, mit csinálj mikor, hogyan koordinálj szövetségként/államként.",
     "seoBlock.p3": "Ha segítség kell a hős előrehaladáshoz, eseményrotációhoz és átvitel előkészítéshez, csatlakozz a Discordhoz és használd a fenti útmutató szekciókat.",
-    "seoBlock.title": "Whiteout Survival Stratégia központ – mit találsz itt"
+    "seoBlock.title": "Whiteout Survival Stratégia központ – mit találsz itt",
+    "nav.kompendium": "Kompendium"
   }
 }

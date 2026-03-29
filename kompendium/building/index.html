@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Building · Gebäude | Kompendium</title>
+  <meta name="description" content="Gebäude-Übersichten und Upgrade-Tabellen – Fire Crystal Furnace und weitere Inhalte."/>
+  <link rel="canonical" href="https://www.whiteoutsurvival-community.com/kompendium/building/"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="icon" href="/assets/logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#030712; --text:#f1f5f9; --muted:#94a3b8;
+      --line:rgba(148,163,184,.18); --accent:#22d3ee; --accent2:#0ea5e9;
+      --card:rgba(15,23,42,.75); --r:16px; --max:1200px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0; min-height:100vh; font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;
+      color:var(--text); background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 900px 500px at 10% -10%, rgba(14,165,233,.12), transparent),
+        radial-gradient(ellipse 700px 400px at 100% 0%, rgba(34,211,238,.08), transparent);
+    }
+    a{ color: var(--accent2); text-decoration: none; font-weight:600; }
+    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 1.5rem 1.1rem 2.5rem; }
+    .mast{
+      display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:1rem;
+      padding-bottom: 1.25rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line);
+    }
+    .brand{ display:flex; align-items:center; gap:12px; color:inherit; }
+    .brand img{ width:40px; height:40px; border-radius:12px; border:1px solid var(--line); }
+    .brand-title{ font-weight:800; font-size:1.1rem; letter-spacing:-.02em; }
+    .brand-sub{ font-size:12.5px; color:var(--muted); font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
+    .nav{ display:flex; flex-wrap:wrap; gap:8px; }
+    .pill{
+      padding:10px 15px; border-radius:999px; border:1px solid var(--line);
+      background: rgba(255,255,255,.04); font-weight:700; font-size:12.5px; color:var(--text);
+    }
+    .pill:hover{ background: rgba(34,211,238,.08); border-color: rgba(34,211,238,.35); }
+    .pill.cta{
+      border-color: rgba(34,211,238,.55);
+      background: linear-gradient(135deg, rgba(34,211,238,.2), rgba(14,165,233,.12));
+    }
+    .layout{ display:grid; grid-template-columns: 240px 1fr; gap: 1.5rem; align-items:start; }
+    @media (max-width: 860px){ .layout{ grid-template-columns: 1fr; } }
+    aside.navcol{
+      position:sticky; top:14px; padding:1rem 1rem 1.1rem; border-radius: var(--r);
+      border:1px solid var(--line); background: var(--card); backdrop-filter: blur(10px);
+    }
+    aside.navcol h2{ margin:0 0 .75rem; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+    aside.navcol ul{ margin:0; padding:0; list-style:none; }
+    aside.navcol li{ margin:8px 0; font-size:13.5px; font-weight:600; }
+    aside.navcol a{ color:var(--text); }
+    aside.navcol a[aria-current="page"]{ color: var(--accent); }
+    .panel{
+      border:1px solid var(--line); border-radius: var(--r); background: var(--card);
+      backdrop-filter: blur(12px); padding: 1.4rem 1.25rem 1.6rem;
+    }
+    h1{ margin:0 0 .5rem; font-size: clamp(1.35rem, 3vw, 1.75rem); font-weight:800; letter-spacing:-.03em; }
+    .kicker{ font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:800; margin:0 0 .5rem; }
+    .lede{ margin:0 0 1.25rem; color: var(--muted); font-size: 15px; line-height:1.65; max-width: 62ch; }
+    .grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:12px; }
+    .card{
+      border:1px solid var(--line); border-radius:14px; padding:16px 18px;
+      background: rgba(255,255,255,.03); transition: border-color .2s, background .2s;
+    }
+    a.card{ display:block; color:inherit; text-decoration:none; }
+    a.card:hover{ border-color: rgba(34,211,238,.3); background: rgba(34,211,238,.06); }
+    .card h2{ margin:0 0 8px; font-size:15px; font-weight:800; }
+    .card p{ margin:0; font-size:13.5px; color:var(--muted); line-height:1.55; }
+    .tag{ display:inline-block; margin-top:12px; font-size:11px; padding:4px 10px; border-radius:8px; background: rgba(255,255,255,.06); color:var(--muted); }
+    footer.foot{
+      margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid var(--line);
+      font-size: 12.5px; color: var(--muted); text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="mast">
+      <a href="../index.html" class="brand" style="text-decoration:none">
+        <img src="/assets/logo.png" alt=""/>
+        <div>
+          <div class="brand-title">Kompendium</div>
+          <div class="brand-sub">Strategie · Daten · Rechner</div>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="pill" href="../index.html">Übersicht</a>
+        <a class="pill" href="../../guides/heroes/">Helden</a>
+        <a class="pill" href="../../guides/experts/">Experts</a>
+        <a class="pill" href="../../guides/alliance-mobilization.html">AM</a>
+        <a class="pill cta" href="https://discord.gg/wos-community" target="_blank" rel="noopener">Discord</a>
+      </nav>
+    </header>
+    <div class="layout">
+      <aside class="navcol" aria-label="Bereich">
+        <h2>Inhalt</h2>
+        <ul>
+          <li><a href="../index.html">Kompendium</a></li>
+          <li><a href="index.html" aria-current="page">Building · Gebäude</a></li>
+          <li><a href="fire-crystal-furnace.html">Fire Crystal Furnace</a></li>
+        </ul>
+      </aside>
+      <main>
+        <div class="panel">
+          <p class="kicker">Hauptkategorie</p>
+          <h1>Building · Gebäude</h1>
+          <p class="lede">
+            Upgrade-Tabellen und Rechner für zentrale Gebäude. Weitere Einträge folgen nach demselben Schema.
+          </p>
+          <div class="grid">
+            <a class="card" href="fire-crystal-furnace.html">
+              <h2>Fire Crystal Furnace</h2>
+              <p>Stufen, Voraussetzungen, Ressourcen, Bauzeit, Macht – inkl. Upgrade-Rechner für Summen zwischen zwei Stufen.</p>
+              <span class="tag">Tabelle &amp; Rechner</span>
+            </a>
+          </div>
+          <footer class="foot">
+            <a href="../index.html">Zurück zum Kompendium</a> · <span data-y></span>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>document.querySelector("[data-y]").textContent = new Date().getFullYear();</script>
+</body>
+</html>
